@@ -18,12 +18,12 @@ public class MainPanel extends JPanel {
         setLayout(new BorderLayout());
 
         add(toolBar, BorderLayout.PAGE_START);
-        toolBar.add(makeButton(new JButton(), "tool-save.png", new ActionListener() {
+        toolBar.add(makeButton(new JButton(), "save.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                fileWork.saveFile();
             }
         }));
-        toolBar.add(makeButton(new JButton(), "tool-open.png", new ActionListener() {
+        toolBar.add(makeButton(new JButton(), "open.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 fileWork.openFile();
             }

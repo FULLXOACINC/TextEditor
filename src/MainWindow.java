@@ -78,7 +78,7 @@ public class MainWindow {
 
 
         JScrollPane scrollPanel = new JScrollPane(textArea);
-        scrollPanel.setPreferredSize(new Dimension(100, 500));
+        scrollPanel.setPreferredSize(new Dimension(100, 480));
         frame.add(scrollPanel, BorderLayout.AFTER_LAST_LINE);
         frame.setPreferredSize(new Dimension(800, 600));
         frame.pack();
