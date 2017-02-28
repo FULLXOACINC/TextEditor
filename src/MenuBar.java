@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by alex on 17.2.17.
  */
-public class MenuBar extends JMenuBar{
+public class MenuBar {
     private JFrame frame;
     private FileWorker fileWork;
 

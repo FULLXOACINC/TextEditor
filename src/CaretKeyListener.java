@@ -11,7 +11,7 @@ public class CaretKeyListener implements KeyListener {
 
     public CaretKeyListener(MainWindow mainWindow){
         textPanel = mainWindow.getTextPanel();
-        caret = mainWindow.getTextPanel().getCaret();
+        caret = textPanel.getCaret();
     }
 
     public void keyPressed(KeyEvent keyEvent) {

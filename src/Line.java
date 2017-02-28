@@ -11,7 +11,7 @@ public class Line {
     private Caret caret;
     private int maxHight;
     private int maxLength;
-    private int cordinateY;
+    private int coordinateY;
     private int numberLine;
     private LinkedList<Char> chars = new LinkedList<Char>();
 
@@ -27,14 +27,9 @@ public class Line {
         return chars;
     }
 
-    public void add(char ch) {
-        chars.add(new Char(ch, mainWindow));
-    }
-
     public void add(Char ch) {
         chars.add(new Char(ch, mainWindow));
     }
-
 
     public void add(int i, char ch) {
         chars.add(i, new Char(ch, mainWindow));
@@ -50,16 +45,16 @@ public class Line {
 
     public Line copySubLine(int x1, int x2){
         Line newLine = new Line(mainWindow);
-        for (int i = x1; i < x2; i++){
-            newLine.add(this.chars.get(i));
+        for (int index = x1; index < x2; index++){
+            newLine.add(this.chars.get(index));
         }
         return newLine;
     }
 
     public void removeBack(int x){
         int size = this.size();
-        for (int i = size; i > x; i--){
-            this.remove(i);
+        for (int index = size; index > x; index--){
+            this.remove(index);
         }
     }
 
@@ -77,28 +72,26 @@ public class Line {
 
     public void setMaxLength(int l) { maxLength = l; }
 
-    public int getMaxLength() { return maxLength; }
+    public void setCoordinateY(int coordinate) { coordinateY = coordinate; }
 
-    public void setCordinateY(int c) { cordinateY = c; }
-
-    public int getCordinateY() {
-        return cordinateY;
+    public int getCoordinateY() {
+        return coordinateY;
     }
 
     public void setNumberLine(int number) {
         this.numberLine = number;
     }
 
-    public void checkEndLine(Point2D p) {
-        if (cordinateY-maxHight <= p.getY()){
+    public void checkEndLine(Point2D point) {
+        if (coordinateY -maxHight <= point.getY()){
             caret.setCaretX(chars.size());
             caret.setCaretY(numberLine);
-            if (10 >= p.getX()){
+            if (10 >= point.getX()){
                 caret.setCaretX(0);
             }
         }
     }
 
-    public void setMaxHightNumber(int n) { maxHight = n;}
+    public void setMaxHightNumber(int value) { maxHight = value;}
 
 }

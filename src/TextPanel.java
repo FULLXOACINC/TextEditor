@@ -11,17 +11,16 @@ import java.util.ArrayList;
  * Created by alex on 19.2.17.
  */
 public class TextPanel  extends JComponent{
-
     private MainWindow mainWindow;
     private Caret caret;
     private int fontStyle;
-    private Font font ;
+    private Font panelFont;
     private ArrayList<Line> lines = new ArrayList<Line>();
 
     public TextPanel(MainWindow mainWindow){
         this.mainWindow = mainWindow;
         fontStyle=Font.PLAIN;
-        font = new Font(Font.MONOSPACED,fontStyle,10);
+        panelFont = new Font("Liberation Serif",fontStyle,10);
         setLayout(new BorderLayout());
     }
 
@@ -30,8 +29,8 @@ public class TextPanel  extends JComponent{
         for (Line line: lines) {
             line.setMaxHightNumber(0);
             for (Char ch : line.getChars()) {
-                Font f = new Font(ch.getFontType(), ch.getFontStyles(), ch.getFontSize());
-                graphics2d.setFont(f);
+                Font font = new Font(ch.getFontType(), ch.getFontStyles(), ch.getFontSize());
+                graphics2d.setFont(font);
                 FontMetrics fm = graphics2d.getFontMetrics();
                 line.setMaxHight(fm.getHeight());
             }
@@ -48,13 +47,13 @@ public class TextPanel  extends JComponent{
             for (Char ch: line.getChars()) {
                 letterX++;
                 graphics2d.setColor(Color.BLACK);
-                Font f = new Font(ch.getFontType(), ch.getFontStyles(), ch.getFontSize());
-                graphics2d.setFont(f);
+                Font font = new Font(ch.getFontType(), ch.getFontStyles(), ch.getFontSize());
+                graphics2d.setFont(font);
                 FontMetrics fm =  graphics2d.getFontMetrics();
                 if (ch.getIsSelect()) {
                     graphics2d.setColor(Color.BLACK);
                     Rectangle2D rect = new Rectangle
-                            (x, y-line.getMaxHight()+3, fm.stringWidth(ch.getStringCh()), line.getMaxHight()-1);
+                            (x-2, y-line.getMaxHight()+2, fm.stringWidth(ch.getStringCh())+3, line.getMaxHight()-1);
                     graphics2d.fill(rect);
                     graphics2d.setColor(Color.WHITE);
                 }
@@ -66,27 +65,27 @@ public class TextPanel  extends JComponent{
                 ch.setNumberLine(lineY);
                 x += fm.stringWidth(ch.getStringCh())+1;
                 if (caret.getCaretX() == letterX && caret.getCaretY()  == lineY){
-                    caret.setCaretCordinateX(x);
-                    caret.setCaretCordinateY(y);
+                    caret.setCaretCoordinateX(x);
+                    caret.setCaretCoordinateY(y);
                 }
             }
             line.setMaxLength(x);
-            line.setCordinateY(y);
+            line.setCoordinateY(y);
             line.setNumberLine(lineY);
             xMax = xMax < x ? x : xMax;
             if (caret.getCaretX() == 0 && caret.getCaretY() == lineY){
-                caret.setCaretCordinateX(10);
-                caret.setCaretCordinateY(y);
+                caret.setCaretCoordinateX(10);
+                caret.setCaretCoordinateY(y);
             }
         }
         setPreferredSize(new Dimension(xMax + 50, y + 50));
     }
     public Font getFont() {
-        return font;
+        return panelFont;
     }
 
     public String getFontType(){
-        return font.getFontName();
+        return panelFont.getFontName();
     }
 
     public int getFontStyles(){
@@ -94,35 +93,35 @@ public class TextPanel  extends JComponent{
     }
 
     public int getFontSize(){
-        return font.getSize();
+        return panelFont.getSize();
     }
     public void setFontSize(int size){
-        font = new Font(getFontType(), getFontStyles(), size);
+        panelFont = new Font(getFontType(), getFontStyles(), size);
     }
     public void setFontType(String type){
-        font = new Font(type, getFontStyles(), getFontSize());
+        panelFont = new Font(type, getFontStyles(), getFontSize());
     }
 
     public void setFontStyles(int style){
-        if (fontStyle == Font.PLAIN && style == Font.BOLD) {
+        if (fontStyle == Font.PLAIN && style == Font.BOLD)
             fontStyle = Font.BOLD;
-        } else if (fontStyle == Font.BOLD && style == Font.BOLD) {
+         else if (fontStyle == Font.BOLD && style == Font.BOLD)
             fontStyle = Font.PLAIN;
-        } else if (fontStyle == Font.PLAIN && style == Font.ITALIC) {
+         else if (fontStyle == Font.PLAIN && style == Font.ITALIC)
             fontStyle = Font.ITALIC;
-        } else if (fontStyle == Font.ITALIC && style == Font.ITALIC) {
+         else if (fontStyle == Font.ITALIC && style == Font.ITALIC)
             fontStyle = Font.PLAIN;
-        } else if (fontStyle == Font.BOLD && style == Font.ITALIC) {
+         else if (fontStyle == Font.BOLD && style == Font.ITALIC)
             fontStyle = Font.BOLD + Font.ITALIC;
-        } else if (fontStyle == Font.ITALIC && style == Font.BOLD) {
+         else if (fontStyle == Font.ITALIC && style == Font.BOLD)
             fontStyle = Font.BOLD + Font.ITALIC;
-        } else if (fontStyle == Font.BOLD + Font.ITALIC && style == Font.BOLD) {
+         else if (fontStyle == Font.BOLD + Font.ITALIC && style == Font.BOLD)
             fontStyle = Font.ITALIC;
-        } else if (fontStyle == Font.BOLD + Font.ITALIC && style == Font.ITALIC) {
+         else if (fontStyle == Font.BOLD + Font.ITALIC && style == Font.ITALIC)
             fontStyle = Font.BOLD;
-        }
 
-        font = new Font(getFontType(), fontStyle, getFontSize());
+
+        panelFont = new Font(getFontType(), fontStyle, getFontSize());
     }
 
     public Caret getCaret(){
@@ -131,10 +130,6 @@ public class TextPanel  extends JComponent{
 
     public ArrayList<Line> getLines(){
         return lines;
-    }
-
-    public void setLine(ArrayList<Line> lines) {
-        this.lines = lines;
     }
 
     public void createInput(){
@@ -385,78 +380,6 @@ public class TextPanel  extends JComponent{
         deleteSelectedText();
         lines.get(caret.getCaretY()).add(caret.getCaretX(), keyChar);
         caret.incrementCaretX();
-    }
-
-    public void inverseSelectionNext(){
-        caret.incrementCaretX();
-        if (caret.getCaretX() != 0 ) {
-            int oneX = lines.get(caret.getCaretY()).getChars().get(caret.getCaretX() - 1).getX() + 1;
-            int oneY = lines.get(caret.getCaretY()).getChars().get(caret.getCaretX() - 1).getY() - 1;
-            for (Line line : lines) {
-                for (Char ch : line.getChars()) {
-                    if (!ch.getIsSelect()) {
-                        ch.setIsSelect(ch.contains(new Point(oneX, oneY)));
-                    } else if (ch.contains(new Point(oneX, oneY))) {
-                        if (lines.indexOf(line) == lines.size() - 1 &&
-                                line.getChars().indexOf(ch) == line.getChars().size() - 1) {
-                            ch.setIsSelect(true);
-                        } else {
-                            ch.setIsSelect(false);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public void inverseSelectionPrev(){
-        if (caret.getCaretX() != 0 ) {
-            int oneX = lines.get(caret.getCaretY()).getChars().get(caret.getCaretX() - 1).getX() + 1;
-            int oneY = lines.get(caret.getCaretY()).getChars().get(caret.getCaretX() - 1).getY() - 1;
-            for (Line line : lines) {
-                for (Char ch : line.getChars()) {
-                    if (!ch.getIsSelect()) {
-                        ch.setIsSelect(ch.contains(new Point(oneX, oneY)));
-                    } else if (ch.contains(new Point(oneX, oneY))) {
-                        ch.setIsSelect(false);
-                    }
-                }
-            }
-        }
-        caret.decrementCaretX();
-    }
-
-    public void inverseSelectionUp(){
-        int oneX = caret.returnSelectionCordinateCaretX();
-        int oneY = caret.returnSelectionCordinateCaretY();
-        caret.decrementCaretY();
-        int twoX = caret.returnSelectionCordinateCaretX();
-        int twoY = caret.returnSelectionCordinateCaretY();
-        for (Line line: lines) {
-            for (Char ch : line.getChars()) {
-                if (!ch.getIsSelect()) {
-                    ch.setIsSelect(ch.contains(new Point(oneX, oneY), new Point(twoX, twoY)));
-                } else if (ch.contains(new Point(oneX, oneY), new Point(twoX, twoY))) {
-                    ch.setIsSelect(false);
-                }
-            }
-        }
-    }
-
-    public void inverseSelectionDown(){
-        int oneX = caret.returnSelectionCordinateCaretX();
-        int oneY = caret.returnSelectionCordinateCaretY();
-        caret.incrementCaretY();
-        int twoX = caret.returnSelectionCordinateCaretX();
-        int twoY = caret.returnSelectionCordinateCaretY();
-        for (Line line: lines)
-            for (Char ch : line.getChars())
-                if (!ch.getIsSelect())
-                    ch.setIsSelect(ch.contains(new Point(oneX, oneY), new Point(twoX, twoY)));
-                  else if (ch.contains(new Point(oneX, oneY), new Point(twoX, twoY)))
-                    ch.setIsSelect(false);
-
-
     }
 
     public void click(Point point) {

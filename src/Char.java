@@ -84,14 +84,12 @@ public class Char{
 
     }
 
-
-
     public void setFontSize(int size){
         font = new Font(getFontType(), getFontStyles(), size);
     }
 
-    public boolean contains(Point2D p){
-        return (x <= p.getX() && x+wight >= p.getX() && y-height <= p.getY() && y >= p.getY());
+    public boolean contains(Point2D point){
+        return (x <= point.getX() && x+wight >= point.getX() && y-height <= point.getY() && y >= point.getY());
     }
 
     public boolean contains(Point one, Point two) {

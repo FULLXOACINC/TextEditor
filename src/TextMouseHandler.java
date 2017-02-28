@@ -7,7 +7,7 @@ import java.awt.event.MouseEvent;
  */
 public class TextMouseHandler extends MouseInputAdapter {
 
-    private Point firstClick;
+    private Point click;
     private TextPanel textPanel;
 
     public TextMouseHandler(MainWindow mainWindow){
@@ -18,16 +18,16 @@ public class TextMouseHandler extends MouseInputAdapter {
         textPanel.click(e.getPoint());
     }
 
-    public void mousePressed(java.awt.event.MouseEvent e){
-        firstClick = e.getPoint();
+    public void mousePressed(MouseEvent e){
+        click = e.getPoint();
     }
 
-    public void mouseReleased(java.awt.event.MouseEvent e){
-        textPanel.click(firstClick, e.getPoint());
+    public void mouseReleased(MouseEvent e){
+        textPanel.click(click, e.getPoint());
     }
 
     public void mouseDragged(MouseEvent e) {
-        textPanel.click(firstClick, e.getPoint());
+        textPanel.click(click, e.getPoint());
     }
 
 }

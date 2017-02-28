@@ -10,7 +10,7 @@ import javax.swing.*;
 /**
  * Created by alex on 17.2.17.
  */
-public class MainPanel extends JPanel {
+public class MainPanel {
 
     private JFrame frame;
     private FileWorker fileWork;
@@ -25,7 +25,13 @@ public class MainPanel extends JPanel {
 
         toolBar.add(makeButton(new JButton(), "new.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                fileWork.newFile();
+                int answer = JOptionPane.showConfirmDialog(
+                        frame,
+                        "Delete all?",
+                        "New",
+                        JOptionPane.YES_NO_OPTION);
+                if(answer==0)
+                    fileWork.newFile();
             }
         }));
         toolBar.add(makeButton(new JButton(), "save.png", new ActionListener() {
@@ -52,10 +58,9 @@ public class MainPanel extends JPanel {
 
 
 
-        String [] fontType = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        JComboBox fontBox = new JComboBox(fontType);
-
-        fontBox.setSelectedIndex(Arrays.asList(fontType).indexOf(Font.MONOSPACED));
+        String [] allFontTypes = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        JComboBox fontBox = new JComboBox(allFontTypes);
+        fontBox.setSelectedIndex(Arrays.asList(allFontTypes).indexOf("Liberation Serif"));
         fontBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 textPanel.changeTypeFont(e);

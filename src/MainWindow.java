@@ -11,24 +11,25 @@ public class MainWindow {
     private MenuBar menuBar;
     private JScrollPane scrollPanel;
     private JFrame frame;
-    private MainPanel panel;
+    private MainPanel mainPanel;
     private TextPanel textPanel;
     private FileWorker fileWork;
 
     public MainWindow() {
-        frame = new JFrame("TextEditorPPVIS");
+        frame = new JFrame("TextEditor");
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         textPanel = new TextPanel(this);
         scrollPanel = new JScrollPane(textPanel);
         fileWork = new FileWorker(this);
-        panel = new MainPanel(this);
+        mainPanel = new MainPanel(this);
         textPanel.createInput();
         menuBar = new MenuBar(this);
         frame.add(scrollPanel, BorderLayout.CENTER);
-        frame.setSize(800,600);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setUndecorated(true);
         frame.setFocusable(true);
         frame.setVisible(true);
-        frame.setResizable(false);
+        frame.setResizable(true);
         addListener();
     }
     private void addListener(){
@@ -49,10 +50,8 @@ public class MainWindow {
         frame.addKeyListener(new CaretKeyListener(this));
         frame.addKeyListener(new CtrlKeyListener(this));
         frame.addKeyListener(new DeleteKeyListener(this));
-
         frame.addKeyListener(new TextKeyListener(this));
     }
-
 
     public void updateWindow() {
         scrollPanel.revalidate();
@@ -63,7 +62,6 @@ public class MainWindow {
     public TextPanel getTextPanel(){
         return textPanel;
     }
-
     public JScrollPane getScrollPanel(){
         return scrollPanel;
     }
@@ -73,6 +71,7 @@ public class MainWindow {
     public JFrame getFrame() {
         return frame;
     }
+
     public static void main(String[] args){
         new MainWindow();
     }
