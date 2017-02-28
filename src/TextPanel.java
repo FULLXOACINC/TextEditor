@@ -396,7 +396,6 @@ public class TextPanel  extends JComponent{
         mainWindow.updateWindow();
     }
 
-
     public void click(Point one, Point two) {
         for (Line line : lines) {
             line.checkEndLine(two);

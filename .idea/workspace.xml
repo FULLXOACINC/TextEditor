@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba4a3aa3-3287-4b4d-823c-172a06ccbfb0" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MainPanel.java" afterPath="$PROJECT_DIR$/src/MenuPanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/TextMouseHandler.java" afterPath="$PROJECT_DIR$/src/TextMouseListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Caret.java" afterPath="$PROJECT_DIR$/src/Caret.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CaretKeyListener.java" afterPath="$PROJECT_DIR$/src/CaretKeyListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Line.java" afterPath="$PROJECT_DIR$/src/Line.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainWindow.java" afterPath="$PROJECT_DIR$/src/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MenuBar.java" afterPath="$PROJECT_DIR$/src/MenuBar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FileWorker.java" afterPath="$PROJECT_DIR$/src/FileWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextPanel.java" afterPath="$PROJECT_DIR$/src/TextPanel.java" />
     </list>
     <ignored path="TextEditor.iws" />
@@ -32,18 +26,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Char.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Char.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Char.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+            <state relative-caret-position="280">
+              <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Char#0;class#Char#0" expanded="false" />
                 <element signature="method#Char#1;class#Char#0" expanded="false" />
                 <element signature="method#setFontStyles#0;class#Char#0" expanded="false" />
+                <element signature="method#contains#0;class#Char#0" expanded="false" />
                 <element signature="method#setNormalizationBold#0;class#Char#0" expanded="false" />
                 <element signature="method#setNormalizationItalic#0;class#Char#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileWorker.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/FileWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextMouseListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TextMouseListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,7 +100,6 @@
         <option value="$PROJECT_DIR$/src/KeyListener.java" />
         <option value="$PROJECT_DIR$/src/ControlKeyListener.java" />
         <option value="$PROJECT_DIR$/src/CtrlKeyListener.java" />
-        <option value="$PROJECT_DIR$/src/FileWorker.java" />
         <option value="$PROJECT_DIR$/src/CaretTimer.java" />
         <option value="$PROJECT_DIR$/src/DeleteKeyListener.java" />
         <option value="$PROJECT_DIR$/src/MainWindowListener.java" />
@@ -100,6 +118,7 @@
         <option value="$PROJECT_DIR$/src/Caret.java" />
         <option value="$PROJECT_DIR$/src/MenuBar.java" />
         <option value="$PROJECT_DIR$/src/TextPanel.java" />
+        <option value="$PROJECT_DIR$/src/FileWorker.java" />
       </list>
     </option>
   </component>
@@ -666,16 +685,16 @@
       <workItem from="1487791840635" duration="2331000" />
       <workItem from="1488104708575" duration="2537000" />
       <workItem from="1488230443467" duration="8899000" />
-      <workItem from="1488293771253" duration="18789000" />
+      <workItem from="1488293771253" duration="21491000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58673000" />
+    <option name="totallyTimeSpent" value="61375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -684,7 +703,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -718,7 +737,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -783,10 +802,13 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#556#562#0" expanded="true" />
+            <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
             <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
             <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
@@ -899,10 +921,13 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#556#562#0" expanded="true" />
+            <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
             <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
             <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
@@ -960,10 +985,13 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#556#562#0" expanded="true" />
+            <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
             <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
             <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
@@ -1025,14 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FileWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MouseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1061,16 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainWindowListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CaretTimer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -1092,16 +1102,6 @@
         <state relative-caret-position="139">
           <caret line="220" column="16" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TextMouseListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1205,17 +1205,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainWindowListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TextMouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="374" column="0" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
+        <state relative-caret-position="1278">
+          <caret line="397" column="4" selection-start-line="397" selection-start-column="4" selection-end-line="397" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#556#562#0" expanded="true" />
+            <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
             <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
             <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
@@ -1236,15 +1257,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Char.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+        <state relative-caret-position="280">
+          <caret line="94" column="0" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Char#0;class#Char#0" expanded="false" />
             <element signature="method#Char#1;class#Char#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#Char#0" expanded="false" />
+            <element signature="method#contains#0;class#Char#0" expanded="false" />
             <element signature="method#setNormalizationBold#0;class#Char#0" expanded="false" />
             <element signature="method#setNormalizationItalic#0;class#Char#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FileWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
