@@ -7,17 +7,27 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 import javax.swing.*;
-
+/**
+ * Created by alex on 17.2.17.
+ */
 public class MainPanel extends JPanel {
 
+    private JFrame frame;
     private FileWorker fileWork;
     private TextPanel textPanel;
 
-    public MainPanel() {
-        JToolBar toolBar = new JToolBar();
-        setLayout(new BorderLayout());
+    public MainPanel(MainWindow mainwindow) {
+        frame=mainwindow.getFrame();
+        fileWork=mainwindow.getFileWork();
+        textPanel= mainwindow.getTextPanel();
 
-        add(toolBar, BorderLayout.PAGE_START);
+        JToolBar toolBar = new JToolBar();
+
+        toolBar.add(makeButton(new JButton(), "new.png", new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                fileWork.newFile();
+            }
+        }));
         toolBar.add(makeButton(new JButton(), "save.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                fileWork.saveFile();
@@ -28,7 +38,7 @@ public class MainPanel extends JPanel {
                 fileWork.openFile();
             }
         }));
-        toolBar.addSeparator();
+
         toolBar.add(makeButton(new JButton(), "B.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 textPanel.changeStyleOnBold();
@@ -39,20 +49,12 @@ public class MainPanel extends JPanel {
                 textPanel.changeStyleOnItalic();
             }
         }));
-        toolBar.addSeparator();
-        String[] sizeFont = {"12", "14", "16", "18", "22", "24", "32", "36", "40", "48"};
-        JComboBox sizeBox = new JComboBox(sizeFont);
-        sizeBox.setMaximumSize(sizeBox.getPreferredSize());
-        sizeBox.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                textPanel.changeSizeFont(e);
-            }
-        });
-        toolBar.add(sizeBox);
-        toolBar.addSeparator();
+
+
+
         String [] fontType = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
         JComboBox fontBox = new JComboBox(fontType);
-        fontBox.setMaximumSize(fontBox.getPreferredSize());
+
         fontBox.setSelectedIndex(Arrays.asList(fontType).indexOf(Font.MONOSPACED));
         fontBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -60,6 +62,16 @@ public class MainPanel extends JPanel {
             }
         });
         toolBar.add(fontBox);
+        String[] sizeFont = {"10", "20", "30", "40", "50"};
+        JComboBox sizeBox = new JComboBox(sizeFont);
+        sizeBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                textPanel.changeSizeFont(e);
+            }
+        });
+        toolBar.add(sizeBox);
+        frame.add(toolBar,BorderLayout.PAGE_START);
+
 
     }
     private JButton makeButton(JButton button, String imgString, ActionListener action){
