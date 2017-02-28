@@ -11,7 +11,7 @@ public class MainWindow {
     private MenuBar menuBar;
     private JScrollPane scrollPanel;
     private JFrame frame;
-    private MainPanel mainPanel;
+    private MenuPanel menuPanel;
     private TextPanel textPanel;
     private FileWorker fileWork;
 
@@ -21,7 +21,7 @@ public class MainWindow {
         textPanel = new TextPanel(this);
         scrollPanel = new JScrollPane(textPanel);
         fileWork = new FileWorker(this);
-        mainPanel = new MainPanel(this);
+        menuPanel = new MenuPanel(this);
         textPanel.createInput();
         menuBar = new MenuBar(this);
         frame.add(scrollPanel, BorderLayout.CENTER);
@@ -30,12 +30,9 @@ public class MainWindow {
         frame.setFocusable(true);
         frame.setVisible(true);
         frame.setResizable(true);
-        addListener();
-    }
-    private void addListener(){
-        TextMouseHandler textmousehandler = new TextMouseHandler(this);
-        textPanel.addMouseListener(textmousehandler);
-        textPanel.addMouseMotionListener(textmousehandler);
+        TextMouseListener textMouseListener = new TextMouseListener(this);
+        textPanel.addMouseListener(textMouseListener);
+        textPanel.addMouseMotionListener(textMouseListener);
         scrollPanel.getHorizontalScrollBar().addAdjustmentListener(new AdjustmentListener() {
             public void adjustmentValueChanged(AdjustmentEvent evt) {
                 updateWindow();

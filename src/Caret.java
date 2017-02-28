@@ -56,7 +56,7 @@ public class Caret {
         caretCoordinateY = y;
     }
 
-    public void incrementCaretX() {
+    public void moveCaretToRight() {
         if (textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1) {
         } else if (textPanel.getLines().get(getCaretY()).size() > caretX) {
             caretX++;
@@ -66,7 +66,7 @@ public class Caret {
         }
     }
 
-    public void incrementCaretY() {
+    public void moveCaretToDown() {
         if (caretY < textPanel.getLines().size() - 1) {
             caretY++;
             if (textPanel.getLines().get(getCaretY()).size() < caretX) {
@@ -75,23 +75,23 @@ public class Caret {
         }
     }
 
-    public void decrementCaretX() {
-        if (caretX == 0 && caretY == 0) {
-        } else if (caretX != 0) {
+    public void moveCaretToLeft() {
+        if (caretX == 0 && caretY == 0)
+            return;
+        else
+            if (caretX != 0)
             caretX--;
-        } else {
-            decrementCaretY();
-            setCaretX(textPanel.getLines().get(getCaretY()).size());
-        }
-    }
-
-    public void decrementCaretY() {
-        System.out.println("Up");
-        if (caretY != 0) {
-            caretY--;
-            if (textPanel.getLines().get(getCaretY()).size() < caretX) {
+            else {
+                moveCaretToUP();
                 setCaretX(textPanel.getLines().get(getCaretY()).size());
             }
+    }
+
+    public void moveCaretToUP() {
+        if (caretY != 0) {
+            caretY--;
+            if (textPanel.getLines().get(getCaretY()).size() < caretX)
+                setCaretX(textPanel.getLines().get(getCaretY()).size());
         }
     }
 
@@ -112,9 +112,7 @@ public class Caret {
         graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
     }
 
-
-
-    void followCaret() {
+    public void followCaret() {
         int x = 0;
         if (textPanel.getCaret().getCaretCoordinateX() > frame.getWidth()) {
             x = textPanel.getCaret().getCaretCoordinateX();
@@ -126,29 +124,5 @@ public class Caret {
         scrollPanel.setViewport(scrollP);
     }
 
-    public int returnSelectionCoordinateCaretX() {
-        if (isFirstChar()) {
-            return 10;
-        } else {
-            return textPanel.getLines().get(getCaretY()).getChars().get(getCaretX() - 1).getX() + 1;
-        }
-    }
-
-    public int returnSelectionCoordinateCaretY() {
-        final Line line = textPanel.getLines().get(getCaretY());
-        if (isLineEmpty()) {
-            return line.getCoordinateY();
-        } else {
-            return line.getChars().get(getCaretX() - 1).getY() - 1;
-        }
-    }
-
-    private boolean isFirstChar() {
-        return getCaretX() == 0 || textPanel.getLines().get(getCaretY()).getChars().size() == 1;
-    }
-
-    private boolean isLineEmpty() {
-        return getCaretX() == 0 || textPanel.getLines().get(getCaretY()).getChars().size() == 0;
-    }
 
 }

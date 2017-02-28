@@ -13,6 +13,7 @@ public class Line {
     private int maxLength;
     private int coordinateY;
     private int numberLine;
+    private final int START_COORDINATE=10;
     private LinkedList<Char> chars = new LinkedList<Char>();
 
     public Line(MainWindow mainWindow) {
@@ -70,7 +71,7 @@ public class Line {
         return chars.size();
     }
 
-    public void setMaxLength(int l) { maxLength = l; }
+    public void setMaxLength(int length) { maxLength = length; }
 
     public void setCoordinateY(int coordinate) { coordinateY = coordinate; }
 
@@ -86,7 +87,7 @@ public class Line {
         if (coordinateY -maxHight <= point.getY()){
             caret.setCaretX(chars.size());
             caret.setCaretY(numberLine);
-            if (10 >= point.getX()){
+            if (START_COORDINATE >= point.getX()){
                 caret.setCaretX(0);
             }
         }

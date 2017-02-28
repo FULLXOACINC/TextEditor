@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba4a3aa3-3287-4b4d-823c-172a06ccbfb0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MouseListener.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MainPanel.java" afterPath="$PROJECT_DIR$/src/MenuPanel.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/TextMouseHandler.java" afterPath="$PROJECT_DIR$/src/TextMouseListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Caret.java" afterPath="$PROJECT_DIR$/src/Caret.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CaretKeyListener.java" afterPath="$PROJECT_DIR$/src/CaretKeyListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Char.java" afterPath="$PROJECT_DIR$/src/Char.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Line.java" afterPath="$PROJECT_DIR$/src/Line.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainPanel.java" afterPath="$PROJECT_DIR$/src/MainPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainWindow.java" afterPath="$PROJECT_DIR$/src/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MenuBar.java" afterPath="$PROJECT_DIR$/src/MenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextMouseHandler.java" afterPath="$PROJECT_DIR$/src/TextMouseHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextPanel.java" afterPath="$PROJECT_DIR$/src/TextPanel.java" />
     </list>
     <ignored path="TextEditor.iws" />
@@ -34,62 +32,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Caret.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Caret.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TextPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3297">
-              <caret line="373" column="0" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#513#519#0" expanded="true" />
-                <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#click#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#click#1;class#TextPanel#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Line.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Line.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1008">
-              <caret line="72" column="47" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#374#380#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Char.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Char.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+            <state relative-caret-position="799">
+              <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#Char#0;class#Char#0" expanded="false" />
+                <element signature="method#Char#1;class#Char#0" expanded="false" />
                 <element signature="method#setFontStyles#0;class#Char#0" expanded="false" />
+                <element signature="method#setNormalizationBold#0;class#Char#0" expanded="false" />
+                <element signature="method#setNormalizationItalic#0;class#Char#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -124,7 +78,6 @@
         <option value="$PROJECT_DIR$/src/fdfd.java" />
         <option value="$PROJECT_DIR$/src/Panel.java" />
         <option value="$PROJECT_DIR$/src/mause.java" />
-        <option value="$PROJECT_DIR$/src/TextMouseListener.java" />
         <option value="$PROJECT_DIR$/src/KeyListener.java" />
         <option value="$PROJECT_DIR$/src/ControlKeyListener.java" />
         <option value="$PROJECT_DIR$/src/CtrlKeyListener.java" />
@@ -133,17 +86,20 @@
         <option value="$PROJECT_DIR$/src/DeleteKeyListener.java" />
         <option value="$PROJECT_DIR$/src/MainWindowListener.java" />
         <option value="$PROJECT_DIR$/src/WindowComponent/TextPanel.java" />
-        <option value="$PROJECT_DIR$/src/MenuBar.java" />
-        <option value="$PROJECT_DIR$/src/TextMouseHandler.java" />
         <option value="$PROJECT_DIR$/src/TextKeyListener.java" />
         <option value="$PROJECT_DIR$/src/MouseListener.java" />
-        <option value="$PROJECT_DIR$/src/CaretKeyListener.java" />
-        <option value="$PROJECT_DIR$/src/Caret.java" />
-        <option value="$PROJECT_DIR$/src/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/Char.java" />
-        <option value="$PROJECT_DIR$/src/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/TextPanel.java" />
+        <option value="$PROJECT_DIR$/src/TextMouseHandler.java" />
+        <option value="$PROJECT_DIR$/src/TextMouseListener.java" />
         <option value="$PROJECT_DIR$/src/Line.java" />
+        <option value="$PROJECT_DIR$/src/MainPanel.java" />
+        <option value="$PROJECT_DIR$/src/MenuPanel.java" />
+        <option value="$PROJECT_DIR$/src/Listeners/CaretKeyListener.java" />
+        <option value="$PROJECT_DIR$/src/CaretKeyListener.java" />
+        <option value="$PROJECT_DIR$/src/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/Caret.java" />
+        <option value="$PROJECT_DIR$/src/MenuBar.java" />
+        <option value="$PROJECT_DIR$/src/TextPanel.java" />
       </list>
     </option>
   </component>
@@ -231,6 +187,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
@@ -707,16 +666,16 @@
       <workItem from="1487791840635" duration="2331000" />
       <workItem from="1488104708575" duration="2537000" />
       <workItem from="1488230443467" duration="8899000" />
-      <workItem from="1488293771253" duration="11956000" />
+      <workItem from="1488293771253" duration="18789000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51840000" />
+    <option name="totallyTimeSpent" value="58673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -730,7 +689,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29285166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29285166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -759,7 +718,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -768,26 +727,13 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#374#380#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/MenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#makeButton#0;class#MainPanel#0" expanded="false" />
+            <element signature="method#makeButton#0;class#MenuPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -806,11 +752,6 @@
           <caret line="83" column="59" selection-start-line="83" selection-start-column="59" selection-end-line="83" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addListener#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1679#1680#0" expanded="true" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -841,15 +782,23 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#513#519#0" expanded="true" />
+            <element signature="e#556#562#0" expanded="true" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
             <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
             <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#1;class#TextPanel#0" expanded="false" />
           </folding>
@@ -862,6 +811,13 @@
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Caret#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToRight#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToDown#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToLeft#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToUP#0;class#Caret#0" expanded="false" />
+            <element signature="method#drawCaret#0;class#Caret#0" expanded="false" />
+            <element signature="method#followCaret#0;class#Caret#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -872,9 +828,9 @@
           <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#374#380#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#417#423#0" expanded="true" />
+            <element signature="e#683#684#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -887,13 +843,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/MenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="43" column="57" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#makeButton#0;class#MainPanel#0" expanded="false" />
+            <element signature="method#makeButton#0;class#MenuPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -912,11 +868,6 @@
           <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addListener#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1679#1680#0" expanded="true" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -947,28 +898,36 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#513#519#0" expanded="true" />
+            <element signature="e#556#562#0" expanded="true" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
             <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
             <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#1;class#TextPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/MenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#makeButton#0;class#MainPanel#0" expanded="false" />
+            <element signature="method#makeButton#0;class#MenuPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -979,11 +938,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addListener#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1679#1680#0" expanded="true" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1005,28 +959,36 @@
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#513#519#0" expanded="true" />
+            <element signature="e#556#562#0" expanded="true" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
             <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
             <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#1;class#TextPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/MenuPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#makeButton#0;class#MainPanel#0" expanded="false" />
+            <element signature="method#makeButton#0;class#MenuPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1037,11 +999,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addListener#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#1413#1414#0" expanded="true" />
-            <element signature="e#1459#1460#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1679#1680#0" expanded="true" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1076,14 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TextKeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MouseListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1112,22 +1061,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TextMouseHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/MainWindowListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CaretTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="54">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TextKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="220" column="16" selection-start-line="220" selection-start-column="16" selection-end-line="220" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TextMouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="32" column="1" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MenuPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2202#2203#0" expanded="true" />
+            <element signature="e#2261#2262#0" expanded="true" />
+            <element signature="method#makeButton#0;class#MenuPanel#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1140,9 +1136,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="788">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1266:1414" expanded="false" />
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1403#1404#0" expanded="true" />
+            <element signature="class#1486:1634" expanded="false" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#1623#1624#0" expanded="true" />
+            <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CaretKeyListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="162">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1150,107 +1163,88 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="734">
+          <caret line="85" column="44" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#417#423#0" expanded="true" />
+            <element signature="method#copySubLine#0;class#Line#0" expanded="false" />
+            <element signature="method#removeBack#0;class#Line#0" expanded="false" />
+            <element signature="method#checkEndLine#0;class#Line#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Caret.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+        <state relative-caret-position="770">
+          <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MenuBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#actionPerformed#0;class#695:1076" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainWindowListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#makeButton#0;class#MainPanel#0" expanded="false" />
+            <element signature="method#Caret#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToRight#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToDown#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToLeft#0;class#Caret#0" expanded="false" />
+            <element signature="method#moveCaretToUP#0;class#Caret#0" expanded="false" />
+            <element signature="method#drawCaret#0;class#Caret#0" expanded="false" />
+            <element signature="method#followCaret#0;class#Caret#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-i386/jre/lib/rt.jar!/java/awt/Component.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19190">
-          <caret line="1423" column="16" selection-start-line="1423" selection-start-column="16" selection-end-line="1423" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="54" column="4" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="4" />
+        <state relative-caret-position="139">
+          <caret line="777" column="16" selection-start-line="777" selection-start-column="16" selection-end-line="777" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addListener#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
+            <element signature="e#25114#25115#0" expanded="true" />
+            <element signature="e#25164#25165#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3297">
-          <caret line="373" column="0" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
+        <state relative-caret-position="1062">
+          <caret line="374" column="0" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#513#519#0" expanded="true" />
+            <element signature="e#556#562#0" expanded="true" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
             <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
             <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#1;class#TextPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="72" column="47" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#374#380#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Char.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+        <state relative-caret-position="799">
+          <caret line="135" column="0" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Char#0;class#Char#0" expanded="false" />
+            <element signature="method#Char#1;class#Char#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#Char#0" expanded="false" />
+            <element signature="method#setNormalizationBold#0;class#Char#0" expanded="false" />
+            <element signature="method#setNormalizationItalic#0;class#Char#0" expanded="false" />
           </folding>
         </state>
       </provider>

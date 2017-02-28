@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class TextPanel  extends JComponent{
     private MainWindow mainWindow;
+    private final int START_COORDINATE=10;
     private Caret caret;
     private int fontStyle;
     private Font panelFont;
@@ -36,12 +37,12 @@ public class TextPanel  extends JComponent{
             }
             if (line.getMaxHight() == 0) line.setMaxHightNumber(15);
         }
-        int y=10;
+        int y=START_COORDINATE;
         int xMax = 0;
         int lineY=-1;
         for (Line line: lines) {
             y += line.getMaxHight();
-            int x=10;
+            int x=START_COORDINATE;
             lineY++;
             int letterX=0;
             for (Char ch: line.getChars()) {
@@ -53,7 +54,7 @@ public class TextPanel  extends JComponent{
                 if (ch.getIsSelect()) {
                     graphics2d.setColor(Color.BLACK);
                     Rectangle2D rect = new Rectangle
-                            (x-2, y-line.getMaxHight()+2, fm.stringWidth(ch.getStringCh())+3, line.getMaxHight()-1);
+                            (x-2, y-line.getMaxHight()+2, fm.stringWidth(ch.getStringCh())+3, line.getMaxHight());
                     graphics2d.fill(rect);
                     graphics2d.setColor(Color.WHITE);
                 }
@@ -74,7 +75,7 @@ public class TextPanel  extends JComponent{
             line.setNumberLine(lineY);
             xMax = xMax < x ? x : xMax;
             if (caret.getCaretX() == 0 && caret.getCaretY() == lineY){
-                caret.setCaretCoordinateX(10);
+                caret.setCaretCoordinateX(START_COORDINATE);
                 caret.setCaretCoordinateY(y);
             }
         }
@@ -134,7 +135,7 @@ public class TextPanel  extends JComponent{
 
     public void createInput(){
         caret = new Caret(mainWindow);
-        CaretTimer caretTimer = new CaretTimer(this);
+        new CaretTimer(this);
         Line newLine = new Line(mainWindow);
         lines.add(newLine);
     }
@@ -146,7 +147,7 @@ public class TextPanel  extends JComponent{
         lines.get(caret.getCaretY()).removeBack(lost);
         lines.add(caret.getCaretY()+1, newLine);
         caret.setCaretX(0);
-        caret.incrementCaretY();
+        caret.moveCaretToDown();
     }
 
     public void deleteChar() {
@@ -159,10 +160,10 @@ public class TextPanel  extends JComponent{
                 }
             }
             lines.remove(caret.getCaretY());
-            caret.decrementCaretY();
+            caret.moveCaretToUP();
         } else{
             lines.get(caret.getCaretY()).remove(caret.getCaretX());
-            caret.decrementCaretX();
+            caret.moveCaretToLeft();
         }
     }
 
@@ -285,12 +286,12 @@ public class TextPanel  extends JComponent{
         try {
             Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
             String s = (String) c.getData(DataFlavor.stringFlavor);
-            for (int i = 0; i < s.length(); i++){
-                if (s.charAt(i) == '\n') {
+            for (int index = 0; index < s.length(); index++){
+                if (s.charAt(index) == '\n') {
                     newLine();
                 } else {
-                    lines.get(caret.getCaretY()).add(caret.getCaretX(), s.charAt(i));
-                    caret.incrementCaretX();
+                    lines.get(caret.getCaretY()).add(caret.getCaretX(), s.charAt(index));
+                    caret.moveCaretToRight();
                 }
             }
         } catch(Exception e) {
@@ -379,7 +380,7 @@ public class TextPanel  extends JComponent{
     public void inputCharKey(char keyChar){
         deleteSelectedText();
         lines.get(caret.getCaretY()).add(caret.getCaretX(), keyChar);
-        caret.incrementCaretX();
+        caret.moveCaretToRight();
     }
 
     public void click(Point point) {

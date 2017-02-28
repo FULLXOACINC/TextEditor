@@ -4,28 +4,28 @@ import java.awt.event.KeyListener;
 /**
  * Created by alex on 19.2.17.
  */
-public class CaretKeyListener implements KeyListener {
+class CaretKeyListener implements KeyListener {
 
     private Caret caret;
     private TextPanel textPanel;
 
-    public CaretKeyListener(MainWindow mainWindow){
+    CaretKeyListener(MainWindow mainWindow){
         textPanel = mainWindow.getTextPanel();
         caret = textPanel.getCaret();
     }
 
     public void keyPressed(KeyEvent keyEvent) {
         if (!keyEvent.isShiftDown() && KeyEvent.VK_LEFT == keyEvent.getKeyCode()) {
-            caret.decrementCaretX();
+            caret.moveCaretToLeft();
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_RIGHT == keyEvent.getKeyCode()) {
-            caret.incrementCaretX();
+            caret.moveCaretToRight();
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_UP == keyEvent.getKeyCode()) {
-            caret.decrementCaretY();
+            caret.moveCaretToUP();
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_DOWN == keyEvent.getKeyCode()) {
-            caret.incrementCaretY();
+            caret.moveCaretToDown();
             textPanel.falseAllSelection();
         }
     }

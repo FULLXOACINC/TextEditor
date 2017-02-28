@@ -10,13 +10,13 @@ import javax.swing.*;
 /**
  * Created by alex on 17.2.17.
  */
-public class MainPanel {
+public class MenuPanel {
 
     private JFrame frame;
     private FileWorker fileWork;
     private TextPanel textPanel;
 
-    public MainPanel(MainWindow mainwindow) {
+    public MenuPanel(MainWindow mainwindow) {
         frame=mainwindow.getFrame();
         fileWork=mainwindow.getFileWork();
         textPanel= mainwindow.getTextPanel();

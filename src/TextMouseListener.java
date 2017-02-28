@@ -5,12 +5,12 @@ import java.awt.event.MouseEvent;
 /**
  * Created by alex on 23.2.17.
  */
-public class TextMouseHandler extends MouseInputAdapter {
+public class TextMouseListener extends MouseInputAdapter {
 
     private Point click;
     private TextPanel textPanel;
 
-    public TextMouseHandler(MainWindow mainWindow){
+    public TextMouseListener(MainWindow mainWindow){
         textPanel = mainWindow.getTextPanel();
     }
 
