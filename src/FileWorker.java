@@ -55,9 +55,6 @@ public class FileWorker {
                     Element Line = doc.createElement("Line");
                     rootElement.appendChild(Line);
 
-                    Attr attr = doc.createAttribute("id");
-                    attr.setValue("1");
-                    Line.setAttributeNode(attr);
 
 
                     Element ch = doc.createElement("Char");

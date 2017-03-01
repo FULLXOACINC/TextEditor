@@ -71,7 +71,11 @@ public class MenuPanel {
         JComboBox sizeBox = new JComboBox(sizeFont);
         sizeBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeSizeFont(e);
+                JComboBox cb = (JComboBox)e.getSource();
+                String change = (String) cb.getSelectedItem();
+                int size = Integer.parseInt(change);
+                textPanel.setFontSizeA(size);
+                mainwindow.updateWindow();
             }
         });
         toolBar.add(sizeBox);
