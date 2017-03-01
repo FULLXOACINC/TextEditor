@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by alex on 17.2.17.
  */
-public class MenuBar extends JMenuBar{
+public class MenuBar {
     private JFrame frame;
     private FileWorker fileWork;
 
@@ -27,7 +27,7 @@ public class MenuBar extends JMenuBar{
 
                 int answer = JOptionPane.showConfirmDialog(
                         frame,
-                        "Del all?",
+                        "Delete all?",
                         "New",
                         JOptionPane.YES_NO_OPTION);
                 if(answer==0)

@@ -57,26 +57,36 @@ public class Caret {
     }
 
     public void moveCaretToRight() {
-        if (textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1) {
-        } else if (textPanel.getLines().get(getCaretY()).size() > caretX) {
-            caretX++;
-        } else if (caretY < textPanel.getLines().size() - 1) {
+        boolean isTextEnd = textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1;
+        boolean isLineEnd =caretY < textPanel.getLines().size() - 1;
+
+        if (isTextEnd)
+            return;
+        else if (isLineEnd) {
             caretY++;
             setCaretX(0);
         }
+        else
+            caretX++;
+
     }
 
     public void moveCaretToDown() {
-        if (caretY < textPanel.getLines().size() - 1) {
+        boolean isLineNotEnds =caretY < textPanel.getLines().size() - 1;
+        boolean isNextLineMoreThenThisLine =textPanel.getLines().get(getCaretY()).size() < caretX;
+
+        if (isLineNotEnds) {
             caretY++;
-            if (textPanel.getLines().get(getCaretY()).size() < caretX) {
+            if (isNextLineMoreThenThisLine) {
                 setCaretX(textPanel.getLines().get(getCaretY()).size());
             }
         }
     }
 
     public void moveCaretToLeft() {
-        if (caretX == 0 && caretY == 0)
+        boolean isTextDocStart = caretX == 0 && caretY == 0;
+
+        if (isTextDocStart)
             return;
         else
             if (caretX != 0)
@@ -88,9 +98,11 @@ public class Caret {
     }
 
     public void moveCaretToUP() {
+        boolean b =textPanel.getLines().get(getCaretY()).size() < caretX;
+
         if (caretY != 0) {
             caretY--;
-            if (textPanel.getLines().get(getCaretY()).size() < caretX)
+            if (b)
                 setCaretX(textPanel.getLines().get(getCaretY()).size());
         }
     }
@@ -114,7 +126,9 @@ public class Caret {
 
     public void followCaret() {
         int x = 0;
-        if (textPanel.getCaret().getCaretCoordinateX() > frame.getWidth()) {
+        boolean isCaretCoordinateXMoreThenDocWidth =textPanel.getCaret().getCaretCoordinateX() > frame.getWidth();
+
+        if (isCaretCoordinateXMoreThenDocWidth) {
             x = textPanel.getCaret().getCaretCoordinateX();
         }
         int y = textPanel.getCaret().getCaretCoordinateY() -
