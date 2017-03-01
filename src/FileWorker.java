@@ -11,7 +11,11 @@ import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Created by alex on 20.2.17.
@@ -29,13 +33,53 @@ public class FileWorker {
 
     public void openFile(){
         JFileChooser fileChooser = new JFileChooser();
+
         if(fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
-            //TODO open file method
+            String filePath=fileChooser.getSelectedFile().getPath();
+            if (getExtension(fileChooser.getSelectedFile().getName()).equals("txt"))
+              openTextFile(filePath);
+            else
+              openXMLFile(filePath);
+        }
 
 
 
 
 
+
+    }
+
+    private String getExtension(String name) {
+        String extension = null;
+        int i = name.lastIndexOf('.');
+        if (i > 0 &&  i < name.length() - 1) {
+            extension = name.substring(i+1).toLowerCase();
+        }
+        return extension;
+    }
+
+    private void openXMLFile(String fileName) {
+
+    }
+
+    private void openTextFile(String fileName) {
+        try  {
+            BufferedReader reader = new BufferedReader( new FileReader(fileName));
+            String line = null;
+            textPanel.setLines(new ArrayList<Line>());
+            while( ( line = reader.readLine() ) != null ) {
+                Line newLine = new Line(mainWindow);
+                char [] newCharArray = line.toCharArray ();
+                for (char ch: newCharArray){
+                    newLine.add(ch);
+                }
+                textPanel.getLines().add(newLine);
+            }
+            mainWindow.updateWindow();
+        }
+        catch ( IOException e ) {
+            JOptionPane.showMessageDialog
+                    (null, "Can't open file", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
 
@@ -52,14 +96,21 @@ public class FileWorker {
                     Element rootElement = doc.createElement("TextEditorByAlex");
                     doc.appendChild(rootElement);
 
-                    Element Line = doc.createElement("Line");
-                    rootElement.appendChild(Line);
+                    for (Line line : textPanel.getLines()) {
+                        Element Line = doc.createElement("Line");
+                        rootElement.appendChild(Line);
+                        for (Char ch : line.getChars()) {
+                            Element character = doc.createElement("Char");
+                            character.setTextContent(ch.getCharCh()+"");
+                            rootElement.appendChild(character);
+                            Line.appendChild(character);
+
+                        }
+
+                    }
 
 
 
-                    Element ch = doc.createElement("Char");
-                    rootElement.appendChild(ch);
-                    Line.appendChild(ch);
 
 
 

@@ -10,13 +10,13 @@ import javax.swing.*;
 /**
  * Created by alex on 17.2.17.
  */
-public class MenuPanel {
+public class MainPanel extends JPanel {
 
     private JFrame frame;
     private FileWorker fileWork;
     private TextPanel textPanel;
 
-    public MenuPanel(MainWindow mainwindow) {
+    public MainPanel(MainWindow mainwindow) {
         frame=mainwindow.getFrame();
         fileWork=mainwindow.getFileWork();
         textPanel= mainwindow.getTextPanel();
@@ -25,13 +25,7 @@ public class MenuPanel {
 
         toolBar.add(makeButton(new JButton(), "new.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int answer = JOptionPane.showConfirmDialog(
-                        frame,
-                        "Delete all?",
-                        "New",
-                        JOptionPane.YES_NO_OPTION);
-                if(answer==0)
-                    fileWork.newFile();
+                fileWork.newFile();
             }
         }));
         toolBar.add(makeButton(new JButton(), "save.png", new ActionListener() {
@@ -58,9 +52,10 @@ public class MenuPanel {
 
 
 
-        String [] allFontTypes = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        JComboBox fontBox = new JComboBox(allFontTypes);
-        fontBox.setSelectedIndex(Arrays.asList(allFontTypes).indexOf("Liberation Serif"));
+        String [] fontType = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
+        JComboBox fontBox = new JComboBox(fontType);
+
+        fontBox.setSelectedIndex(Arrays.asList(fontType).indexOf(Font.MONOSPACED));
         fontBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 textPanel.changeTypeFont(e);

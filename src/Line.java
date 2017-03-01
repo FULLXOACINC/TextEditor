@@ -28,6 +28,10 @@ public class Line {
         return chars;
     }
 
+    public void add(char ch) {
+        chars.add(new Char(ch, mainWindow));
+    }
+
     public void add(Char ch) {
         chars.add(new Char(ch, mainWindow));
     }

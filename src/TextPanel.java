@@ -17,6 +17,7 @@ public class TextPanel  extends JComponent{
     private Caret caret;
     private int fontStyle;
     private Font panelFont;
+
     private List<Line> lines = new ArrayList<Line>();
 
     public TextPanel(MainWindow mainWindow){
@@ -134,6 +135,10 @@ public class TextPanel  extends JComponent{
         return lines;
     }
 
+    public void setLines(List<Line> lines) {
+        this.lines = lines;
+    }
+
     public void createInput(){
         caret = new Caret(mainWindow);
         new CaretTimer(this);
@@ -152,29 +157,25 @@ public class TextPanel  extends JComponent{
     }
 
     public void deleteChar() {
-        int caretX = caret.getCaretX();
-        int caretY = caret.getCaretY();
-        if (caretX ==0 && caretY ==0){
-        } else if (caretX ==0){
-            caret.setCaretX(lines.get(caretY -1).size());
-            if (lines.get(caretY).size() != 0){
-                for (Char ch: lines.get(caretY).getChars()){
-                    lines.get(caretY -1).getChars().add(ch);
+        if (caret.getCaretX()==0 && caret.getCaretY()==0){
+        } else if (caret.getCaretX()==0){
+            caret.setCaretX(lines.get(caret.getCaretY()-1).size());
+            if (lines.get(caret.getCaretY()).size() != 0){
+                for (Char ch: lines.get(caret.getCaretY()).getChars()){
+                    lines.get(caret.getCaretY()-1).getChars().add(ch);
                 }
             }
-            lines.remove(caretY);
+            lines.remove(caret.getCaretY());
             caret.moveCaretToUP();
         } else{
-            lines.get(caretY).remove(caretX);
+            lines.get(caret.getCaretY()).remove(caret.getCaretX());
             caret.moveCaretToLeft();
         }
     }
 
     public void deleteNextChar() {
-        boolean endText = caret.getCaretX() == lines.get(caret.getCaretY()).getChars().size() &&
-                caret.getCaretY() == lines.size() - 1;
-        if (endText){
-
+        if (caret.getCaretX()==lines.get(caret.getCaretY()).getChars().size() &&
+                caret.getCaretY()==lines.size()-1){
         } else if (caret.getCaretX()==lines.get(caret.getCaretY()).getChars().size()){
             if (lines.get(caret.getCaretY()+1).size() != 0){
                 for (Char ch: lines.get(caret.getCaretY()+1).getChars()){
@@ -185,6 +186,20 @@ public class TextPanel  extends JComponent{
         } else{
             lines.get(caret.getCaretY()).remove(caret.getCaretX()+1);
         }
+    }
+
+    public void changeSizeFont(ActionEvent e){
+        JComboBox cb = (JComboBox)e.getSource();
+        String change = (String) cb.getSelectedItem();
+        setFontSize(Integer.parseInt(change));
+        for (Line line: lines) {
+            for (Char ch : line.getChars()) {
+                if (ch.getIsSelect()) {
+                    ch.setFontSize(Integer.parseInt(change));
+                }
+            }
+        }
+        mainWindow.updateWindow();
     }
 
     public void changeTypeFont(ActionEvent e){
@@ -402,14 +417,4 @@ public class TextPanel  extends JComponent{
     }
 
 
-    public void setFontSizeA(int size) {
-        setFontSize(size);
-        for (Line line: lines) {
-            for (Char ch : line.getChars()) {
-                if (ch.getIsSelect()) {
-                    ch.setFontSize(size);
-                }
-            }
-        }
-    }
 }
