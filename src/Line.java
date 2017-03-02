@@ -99,4 +99,7 @@ public class Line {
 
     public void setMaxHightNumber(int value) { maxHight = value;}
 
+    public void add(String text, String font, String style, String size) {
+        chars.add(new Char(text.charAt(0), font, style, size, mainWindow));
+    }
 }

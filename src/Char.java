@@ -35,6 +35,15 @@ public class Char{
         this.fontStyle = ch.getFontStyles();
     }
 
+    public Char(char ch, String font, String style, String size, MainWindow mainWindow) {
+        textPanel = mainWindow.getTextPanel();
+        caret = textPanel.getCaret();
+        this.ch = ch;
+        this.font = new Font(font, Integer.parseInt(style) , Integer.parseInt(size));
+        this.isSelect = false;
+        this.fontStyle = Integer.parseInt(style);
+    }
+
     public String getStringCh(){
         return Character.toString(ch);
     }
