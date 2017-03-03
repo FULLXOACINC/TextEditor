@@ -208,14 +208,13 @@ public class TextPanel  extends JComponent{
         mainWindow.updateWindow();
     }
 
-    public void changeTypeFont(ActionEvent e){
-        JComboBox cb = (JComboBox)e.getSource();
-        String change = (String) cb.getSelectedItem();
-        setFontType(change);
+    public void changeTypeFont(String type){
+
+        setFontType(type);
         for (Line line: lines) {
             for (Char ch : line.getChars()) {
                 if (ch.getIsSelect()) {
-                    ch.setFontType(change);
+                    ch.setFontType(type);
                 }
             }
         }

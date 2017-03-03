@@ -102,7 +102,9 @@ public class MainWindow {
         fontBox.setSelectedIndex(Arrays.asList(allFontTypes).indexOf("Liberation Serif"));
         fontBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeTypeFont(e);
+                JComboBox cb = (JComboBox)e.getSource();
+                String fontType = (String) cb.getSelectedItem();
+                textPanel.changeTypeFont(fontType);
             }
         });
         toolBar.add(fontBox);
@@ -110,7 +112,6 @@ public class MainWindow {
         JComboBox sizeBox = new JComboBox(sizeFont);
         sizeBox.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                textPanel.changeSizeFont(e);
                 JComboBox cb = (JComboBox)e.getSource();
                 String change = (String) cb.getSelectedItem();
                 int size=Integer.parseInt(change);
@@ -243,7 +244,7 @@ public class MainWindow {
         formatter.add(bold);
         bold.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.setFontStyles(Font.BOLD);
+                textPanel.changeStyleOnBold();
                 updateWindow();
             }
         });
@@ -253,18 +254,56 @@ public class MainWindow {
         formatter.add(italic);
         italic.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.setFontStyles(Font.ITALIC);
+                textPanel.changeStyleOnItalic();
                 updateWindow();
             }
         });
 
-        JMenuItem size = new JMenuItem("Size");
+        JMenu size = new JMenu("Size");
         size.setFont(font);
         formatter.add(size);
-        size.addActionListener(new ActionListener() {
+
+        JMenuItem tenSize = new JMenuItem("10");
+        tenSize.setFont(font);
+        size.add(tenSize);
+        tenSize.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                textPanel.setFontStyles(Font.BOLD);
-//                updateWindow();
+                textPanel.changeSizeFont(10);
+                updateWindow();
+            }
+        });
+
+        JMenuItem fiftySize = new JMenuItem("50");
+        fiftySize.setFont(font);
+        size.add(fiftySize);
+        fiftySize.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                textPanel.changeSizeFont(50);
+                updateWindow();
+            }
+        });
+
+        JMenu textFont = new JMenu("Font");
+        textFont.setFont(font);
+        formatter.add(textFont);
+
+        JMenuItem liberSerif = new JMenuItem("Liberation Serif");
+        liberSerif.setFont(font);
+        textFont.add(liberSerif);
+        liberSerif.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                textPanel.changeTypeFont("Liberation Serif");
+                updateWindow();
+            }
+        });
+
+        JMenuItem monospaned = new JMenuItem("Monospaned");
+        monospaned.setFont(font);
+        textFont.add(monospaned);
+        monospaned.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                textPanel.changeTypeFont("Monospaned");
+                updateWindow();
             }
         });
 

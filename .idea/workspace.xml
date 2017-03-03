@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba4a3aa3-3287-4b4d-823c-172a06ccbfb0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MenuBar$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MenuBar$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MenuBar$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MenuBar$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MenuBar.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Window/MenuBar.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Window/MenuPanel.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/TextObjects/Caret.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/TextObjects/Caret.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/TextObjects/Char.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/TextObjects/Char.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$1.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$2.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listeners/FileWorker.java" afterPath="$PROJECT_DIR$/src/Listeners/FileWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextObjects/Caret.java" afterPath="$PROJECT_DIR$/src/TextObjects/Caret.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextObjects/Char.java" afterPath="$PROJECT_DIR$/src/TextObjects/Char.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window/MainWindow.java" afterPath="$PROJECT_DIR$/src/Window/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window/TextPanel.java" afterPath="$PROJECT_DIR$/src/Window/TextPanel.java" />
     </list>
@@ -41,15 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TextPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TextPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Window/TextPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-769">
-              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="178">
+              <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
@@ -57,6 +42,7 @@
                 <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
+                <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
@@ -64,29 +50,44 @@
                 <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
                 <element signature="method#click#0;class#TextPanel#0" expanded="false" />
+                <element signature="method#click#1;class#TextPanel#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Window/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="116" column="47" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
+            <state relative-caret-position="212">
+              <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
               <folding>
                 <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#createMenuPanel#0;class#MainWindow#0" expanded="false" />
+                <element signature="class#2307:2689" expanded="false" />
+                <element signature="class#2755:2891" expanded="false" />
+                <element signature="class#2957:3093" expanded="false" />
+                <element signature="class#3156:3302" expanded="false" />
+                <element signature="e#3230#3231#0" expanded="true" />
+                <element signature="e#3291#3292#0" expanded="true" />
+                <element signature="class#3365:3513" expanded="false" />
+                <element signature="class#3820:4093" expanded="false" />
+                <element signature="class#4277:4595" expanded="false" />
                 <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#createMenuBar#0;class#MainWindow#0" expanded="false" />
-                <element signature="class#5193:5574" expanded="false" />
-                <element signature="class#5733:5869" expanded="false" />
-                <element signature="class#6028:6164" expanded="false" />
-                <element signature="class#6358:6959" expanded="false" />
-                <element signature="class#7199:7365" expanded="false" />
-                <element signature="class#7509:7676" expanded="false" />
-                <element signature="class#7810:7975" expanded="false" />
-                <element signature="class#8228:8411" expanded="false" />
-                <element signature="class#8565:8750" expanded="false" />
+                <element signature="class#5275:5656" expanded="false" />
+                <element signature="class#5815:5951" expanded="false" />
+                <element signature="class#6110:6246" expanded="false" />
+                <element signature="class#6440:7041" expanded="false" />
+                <element signature="class#7281:7447" expanded="false" />
+                <element signature="class#7591:7758" expanded="false" />
+                <element signature="class#7892:8057" expanded="false" />
+                <element signature="class#8310:8488" expanded="false" />
+                <element signature="class#8642:8822" expanded="false" />
+                <element signature="class#9069:9246" expanded="false" />
+                <element signature="class#9403:9580" expanded="false" />
+                <element signature="class#9869:10062" expanded="false" />
+                <element signature="class#10235:10422" expanded="false" />
                 <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
               </folding>
             </state>
@@ -774,12 +775,12 @@
       <workItem from="1488399819370" duration="3950000" />
       <workItem from="1488404996789" duration="1392000" />
       <workItem from="1488406520955" duration="6151000" />
-      <workItem from="1488466076957" duration="15541000" />
+      <workItem from="1488466076957" duration="17884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94594000" />
+    <option name="totallyTimeSpent" value="96937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -826,7 +827,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1286,14 +1287,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Window/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
+          <folding>
+            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#createMenuPanel#0;class#MainWindow#0" expanded="false" />
+            <element signature="class#2307:2689" expanded="false" />
+            <element signature="class#2755:2891" expanded="false" />
+            <element signature="class#2957:3093" expanded="false" />
+            <element signature="class#3156:3302" expanded="false" />
+            <element signature="e#3230#3231#0" expanded="true" />
+            <element signature="e#3291#3292#0" expanded="true" />
+            <element signature="class#3365:3513" expanded="false" />
+            <element signature="class#3820:4093" expanded="false" />
+            <element signature="class#4277:4595" expanded="false" />
+            <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#createMenuBar#0;class#MainWindow#0" expanded="false" />
+            <element signature="class#5275:5656" expanded="false" />
+            <element signature="class#5815:5951" expanded="false" />
+            <element signature="class#6110:6246" expanded="false" />
+            <element signature="class#6440:7041" expanded="false" />
+            <element signature="class#7281:7447" expanded="false" />
+            <element signature="class#7591:7758" expanded="false" />
+            <element signature="class#7892:8057" expanded="false" />
+            <element signature="class#8310:8488" expanded="false" />
+            <element signature="class#8642:8822" expanded="false" />
+            <element signature="class#9069:9246" expanded="false" />
+            <element signature="class#9403:9580" expanded="false" />
+            <element signature="class#9869:10062" expanded="false" />
+            <element signature="class#10235:10422" expanded="false" />
+            <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Window/TextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-769">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        <state relative-caret-position="178">
+          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
             <element signature="method#setFontStyles#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
             <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
             <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
             <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
@@ -1301,6 +1338,7 @@
             <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
             <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
             <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
             <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
             <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
             <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
@@ -1308,28 +1346,7 @@
             <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
             <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
             <element signature="method#click#0;class#TextPanel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="116" column="47" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
-          <folding>
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#createMenuBar#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#5193:5574" expanded="false" />
-            <element signature="class#5733:5869" expanded="false" />
-            <element signature="class#6028:6164" expanded="false" />
-            <element signature="class#6358:6959" expanded="false" />
-            <element signature="class#7199:7365" expanded="false" />
-            <element signature="class#7509:7676" expanded="false" />
-            <element signature="class#7810:7975" expanded="false" />
-            <element signature="class#8228:8411" expanded="false" />
-            <element signature="class#8565:8750" expanded="false" />
-            <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#click#1;class#TextPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
