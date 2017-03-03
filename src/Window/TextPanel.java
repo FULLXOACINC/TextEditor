@@ -195,14 +195,13 @@ public class TextPanel  extends JComponent{
         }
     }
 
-    public void changeSizeFont(ActionEvent e){
-        JComboBox cb = (JComboBox)e.getSource();
-        String change = (String) cb.getSelectedItem();
-        setFontSize(Integer.parseInt(change));
+    public void changeSizeFont(int size){
+
+        setFontSize(size);
         for (Line line: lines) {
             for (Char ch : line.getChars()) {
                 if (ch.getIsSelect()) {
-                    ch.setFontSize(Integer.parseInt(change));
+                    ch.setFontSize(size);
                 }
             }
         }
@@ -213,7 +212,6 @@ public class TextPanel  extends JComponent{
         JComboBox cb = (JComboBox)e.getSource();
         String change = (String) cb.getSelectedItem();
         setFontType(change);
-        System.out.println(change);
         for (Line line: lines) {
             for (Char ch : line.getChars()) {
                 if (ch.getIsSelect()) {

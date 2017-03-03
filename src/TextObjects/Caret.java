@@ -61,19 +61,27 @@ public class Caret {
     }
 
     public void moveCaretToRight() {
-        if (textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1) {
-        } else if (textPanel.getLines().get(getCaretY()).size() > caretX) {
+        boolean isTextEnd =textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1;
+        boolean isLineNotEnd = textPanel.getLines().get(getCaretY()).size() > caretX;
+        boolean isCanMoveDown=caretY < textPanel.getLines().size() - 1;
+
+        if (isTextEnd) {
+            return;
+        } else if (isLineNotEnd) {
             caretX++;
-        } else if (caretY < textPanel.getLines().size() - 1) {
+        } else if (isCanMoveDown) {
             caretY++;
             setCaretX(0);
         }
     }
 
     public void moveCaretToDown() {
-        if (caretY < textPanel.getLines().size() - 1) {
+        boolean isLinesNotEnds=caretY < textPanel.getLines().size() - 1;
+        boolean isNextLineLess=textPanel.getLines().get(getCaretY()).size() < caretX;
+
+        if (isLinesNotEnds) {
             caretY++;
-            if (textPanel.getLines().get(getCaretY()).size() < caretX) {
+            if (isNextLineLess) {
                 setCaretX(textPanel.getLines().get(getCaretY()).size());
             }
         }

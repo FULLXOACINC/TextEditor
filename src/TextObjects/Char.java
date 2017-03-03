@@ -12,7 +12,6 @@ import Window.TextPanel;
 public class Char{
 
     private TextPanel textPanel;
-    private Caret caret;
     private Font font;
     private Boolean isSelect;
     private char ch;
@@ -25,7 +24,6 @@ public class Char{
 
     public Char(char ch, MainWindow mainWindow){
         textPanel = mainWindow.getTextPanel();
-        caret = textPanel.getCaret();
         this.ch = ch;
         isSelect = false;
         font = textPanel.getFont();
@@ -33,7 +31,6 @@ public class Char{
 
     public Char(Char ch, MainWindow mainWindow) {
         textPanel = mainWindow.getTextPanel();
-        caret = textPanel.getCaret();
         this.ch = ch.getCharCh();
         this.font = ch.getFont();
         this.isSelect = ch.getIsSelect();
@@ -42,7 +39,6 @@ public class Char{
 
     public Char(char ch, String font, String style, String size, MainWindow mainWindow) {
         textPanel = mainWindow.getTextPanel();
-        caret = textPanel.getCaret();
         this.ch = ch;
         this.font = new Font(font, Integer.parseInt(style) , Integer.parseInt(size));
         this.isSelect = false;

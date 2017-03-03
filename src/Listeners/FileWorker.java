@@ -82,7 +82,7 @@ public class FileWorker {
     private void openTextFile(String fileName) {
         try  {
             BufferedReader reader = new BufferedReader( new FileReader(fileName));
-            String line = null;
+            String line;
             textPanel.setLines(new ArrayList<Line>());
             while( ( line = reader.readLine() ) != null ) {
                 Line newLine = new Line(mainWindow);
