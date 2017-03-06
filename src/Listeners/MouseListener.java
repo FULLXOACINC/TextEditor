@@ -19,14 +19,16 @@ public class MouseListener extends MouseInputAdapter {
     }
 
     public void mouseClicked(MouseEvent e) {
+
         textPanel.click(firstClick, e.getPoint());
+
     }
 
-    public void mousePressed(java.awt.event.MouseEvent e){
+    public void mousePressed(MouseEvent e){
         firstClick = e.getPoint();
     }
 
-    public void mouseReleased(java.awt.event.MouseEvent e){
+    public void mouseReleased(MouseEvent e){
         textPanel.click(firstClick, e.getPoint());
     }
 

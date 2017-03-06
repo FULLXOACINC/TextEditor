@@ -1,9 +1,7 @@
 package TextObjects;
 
 import Window.MainWindow;
-import Window.TextPanel;
 
-import java.awt.geom.Point2D;
 import java.util.LinkedList;
 
 /**
@@ -12,19 +10,14 @@ import java.util.LinkedList;
 public class Line {
 
     private MainWindow mainWindow;
-    private TextPanel textPanel;
-    private Caret caret;
     private int maxHight;
     private int maxLength;
     private int coordinateY;
     private int numberLine;
-    private final int START_COORDINATE=10;
     private LinkedList<Char> chars = new LinkedList<Char>();
 
     public Line(MainWindow mainWindow) {
         this.mainWindow = mainWindow;
-        textPanel = mainWindow.getTextPanel();
-        caret = textPanel.getCaret();
         maxHight = 15;
         maxLength = 0;
     }
@@ -41,8 +34,8 @@ public class Line {
         chars.add(new Char(ch, mainWindow));
     }
 
-    public void add(int i, char ch) {
-        chars.add(i, new Char(ch, mainWindow));
+    public void add(int index, char ch) {
+        chars.add(index, new Char(ch, mainWindow));
     }
 
     public void remove(int caretX) {
@@ -92,14 +85,8 @@ public class Line {
         this.numberLine = number;
     }
 
-    public void checkEndLine(Point2D point) {
-        if (coordinateY -maxHight <= point.getY()){
-            caret.setCaretX(chars.size());
-            caret.setCaretY(numberLine);
-            if (START_COORDINATE >= point.getX()){
-                caret.setCaretX(0);
-            }
-        }
+    public int getNumberLine() {
+        return numberLine;
     }
 
     public void setMaxHightNumber(int value) { maxHight = value;}

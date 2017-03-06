@@ -21,16 +21,16 @@ public class CaretKeyListener implements KeyListener {
 
     public void keyPressed(KeyEvent keyEvent) {
         if (!keyEvent.isShiftDown() && KeyEvent.VK_LEFT == keyEvent.getKeyCode()) {
-            caret.moveCaretToLeft();
+            caret.moveCaretToLeft(textPanel);
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_RIGHT == keyEvent.getKeyCode()) {
-            caret.moveCaretToRight();
+            caret.moveCaretToRight(textPanel);
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_UP == keyEvent.getKeyCode()) {
-            caret.moveCaretToUP();
+            caret.moveCaretToUP(textPanel);
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_DOWN == keyEvent.getKeyCode()) {
-            caret.moveCaretToDown();
+            caret.moveCaretToDown(textPanel);
             textPanel.falseAllSelection();
         }
     }

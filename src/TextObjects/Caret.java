@@ -1,7 +1,6 @@
 package TextObjects;
 
-import javax.swing.*;
-import java.awt.*;
+
 import Window.MainWindow;
 import Window.TextPanel;
 
@@ -10,20 +9,12 @@ import Window.TextPanel;
  */
 public class Caret {
 
-    private MainWindow mainWindow;
-    private TextPanel textPanel;
-    private JFrame frame;
-    private JScrollPane scrollPanel;
     private int caretX;
     private int caretY;
     private int caretCoordinateX;
     private int caretCoordinateY;
 
     public Caret(MainWindow mainWindow) {
-        this.mainWindow = mainWindow;
-        textPanel = mainWindow.getTextPanel();
-        frame = mainWindow.getFrame();
-        scrollPanel = mainWindow.getScrollPanel();
         caretX = 0;
         caretY = 0;
     }
@@ -60,10 +51,10 @@ public class Caret {
         caretCoordinateY = y;
     }
 
-    public void moveCaretToRight() {
-        boolean isTextEnd =textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1;
+    public void moveCaretToRight(TextPanel textPanel) {
+        boolean isTextEnd = textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1;
         boolean isLineNotEnd = textPanel.getLines().get(getCaretY()).size() > caretX;
-        boolean isCanMoveDown=caretY < textPanel.getLines().size() - 1;
+        boolean isCanMoveDown= caretY < textPanel.getLines().size() - 1;
 
         if (isTextEnd) {
             return;
@@ -75,7 +66,7 @@ public class Caret {
         }
     }
 
-    public void moveCaretToDown() {
+    public void moveCaretToDown(TextPanel textPanel) {
         boolean isLinesNotEnds=caretY < textPanel.getLines().size() - 1;
         boolean isNextLineLess=textPanel.getLines().get(getCaretY()).size() < caretX;
 
@@ -87,19 +78,19 @@ public class Caret {
         }
     }
 
-    public void moveCaretToLeft() {
+    public void moveCaretToLeft(TextPanel textPanel) {
         if (caretX == 0 && caretY == 0)
             return;
         else
             if (caretX != 0)
             caretX--;
             else {
-                moveCaretToUP();
+                moveCaretToUP(textPanel);
                 setCaretX(textPanel.getLines().get(getCaretY()).size());
             }
     }
 
-    public void moveCaretToUP() {
+    public void moveCaretToUP(TextPanel textPanel) {
         if (caretY != 0) {
             caretY--;
             if (textPanel.getLines().get(getCaretY()).size() < caretX)
@@ -107,34 +98,8 @@ public class Caret {
         }
     }
 
-    public void drawCaret() {
-        int caretCoordinateX = getCaretCoordinateX();
-        int caretCoordinateY = getCaretCoordinateY();
-        Graphics2D graphics2d = (Graphics2D) textPanel.getGraphics();
-        Font font = textPanel.getFont();
-        graphics2d.setFont(font);
-        FontMetrics fm =  graphics2d.getFontMetrics();
-        graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        graphics2d.setColor(textPanel.getBackground());
-        graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
-    }
 
-    public void followCaret() {
-        int x = 0;
-        if (textPanel.getCaret().getCaretCoordinateX() > frame.getWidth()) {
-            x = textPanel.getCaret().getCaretCoordinateX();
-        }
-        int y = textPanel.getCaret().getCaretCoordinateY() -
-                textPanel.getLines().get(textPanel.getCaret().getCaretY()).getMaxHight();
-        JViewport scrollP = scrollPanel.getViewport();
-        scrollP.setViewPosition(new Point(x, y));
-        scrollPanel.setViewport(scrollP);
-    }
+
 
 
 }

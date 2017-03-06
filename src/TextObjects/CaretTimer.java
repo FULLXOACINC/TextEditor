@@ -11,14 +11,11 @@ import java.util.TimerTask;
  */
 public class CaretTimer {
 
-    private Caret caret;
-
     public CaretTimer(TextPanel textPanel) {
-        caret = textPanel.getCaret();
         final Timer time = new Timer();
         time.schedule(new TimerTask() {
             public void run() {
-                caret.drawCaret();
+                textPanel.drawCaret();
             }
         }, 500, 1000);
     }

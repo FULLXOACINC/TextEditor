@@ -30,7 +30,7 @@ public class TextKeyListener implements KeyListener {
         if (KeyEvent.VK_ENTER == keyEvent.getKeyCode()) {
             textPanel.enterKey();
         }
-        caret.followCaret();
+        textPanel.followCaret(mainWindow.getFrame(),mainWindow.getScrollPanel());
         mainWindow.updateWindow();
     }
 

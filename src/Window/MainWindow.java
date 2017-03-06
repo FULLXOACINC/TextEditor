@@ -29,7 +29,7 @@ public class MainWindow {
         scrollPanel = new JScrollPane(textPanel);
         fileWork = new FileWorker(this);
         menuPanel = createMenuPanel();
-        textPanel.createInput();
+        textPanel.createInput(this);
 
         menuBar = createMenuBar();
         frame.setJMenuBar(menuBar);
@@ -86,12 +86,17 @@ public class MainWindow {
         }));
         toolBar.add(makeButton(new JButton(), "B.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
                 textPanel.changeStyleOnBold();
+                updateWindow();
+
             }
         }));
         toolBar.add(makeButton(new JButton(), "I.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+
                 textPanel.changeStyleOnItalic();
+                updateWindow();
             }
         }));
 
@@ -105,6 +110,8 @@ public class MainWindow {
                 JComboBox cb = (JComboBox)e.getSource();
                 String fontType = (String) cb.getSelectedItem();
                 textPanel.changeTypeFont(fontType);
+
+                updateWindow();
             }
         });
         toolBar.add(fontBox);
@@ -116,6 +123,8 @@ public class MainWindow {
                 String change = (String) cb.getSelectedItem();
                 int size=Integer.parseInt(change);
                 textPanel.changeSizeFont(size);
+
+                updateWindow();
             }
         });
         toolBar.add(sizeBox);
@@ -129,7 +138,6 @@ public class MainWindow {
         button.setIcon(img);
         return button;
     }
-
 
     private JMenuBar createMenuBar() {
         JMenuBar menuBar = new JMenuBar();

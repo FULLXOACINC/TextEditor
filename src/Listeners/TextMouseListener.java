@@ -12,14 +12,17 @@ import Window.TextPanel;
 public class TextMouseListener extends MouseInputAdapter {
 
     private Point click;
+    private MainWindow mainWindow;
     private TextPanel textPanel;
 
     public TextMouseListener(MainWindow mainWindow){
+        this.mainWindow=mainWindow;
         textPanel = mainWindow.getTextPanel();
     }
 
     public void mouseClicked(MouseEvent e) {
         textPanel.click(e.getPoint());
+        mainWindow.updateWindow();
     }
 
     public void mousePressed(MouseEvent e){
@@ -28,10 +31,12 @@ public class TextMouseListener extends MouseInputAdapter {
 
     public void mouseReleased(MouseEvent e){
         textPanel.click(click, e.getPoint());
+        mainWindow.updateWindow();
     }
 
     public void mouseDragged(MouseEvent e) {
         textPanel.click(click, e.getPoint());
+        mainWindow.updateWindow();
     }
 
 }

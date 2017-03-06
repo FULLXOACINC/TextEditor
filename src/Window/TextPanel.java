@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.ActionEvent;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,6 @@ import java.util.List;
  * Created by alex on 19.2.17.
  */
 public class TextPanel  extends JComponent{
-    private MainWindow mainWindow;
     private final int START_COORDINATE=10;
     private Caret caret;
     private int fontStyle;
@@ -28,7 +27,6 @@ public class TextPanel  extends JComponent{
     private List<Line> lines = new ArrayList<Line>();
 
     public TextPanel(MainWindow mainWindow){
-        this.mainWindow = mainWindow;
         fontStyle=Font.PLAIN;
         panelFont = new Font("Liberation Serif",fontStyle,10);
         setLayout(new BorderLayout());
@@ -90,6 +88,7 @@ public class TextPanel  extends JComponent{
         }
         setPreferredSize(new Dimension(xMax + 50, y + 50));
     }
+
     public Font getFont() {
         return panelFont;
     }
@@ -105,33 +104,13 @@ public class TextPanel  extends JComponent{
     public int getFontSize(){
         return panelFont.getSize();
     }
+
     public void setFontSize(int size){
         panelFont = new Font(getFontType(), getFontStyles(), size);
     }
+
     public void setFontType(String type){
         panelFont = new Font(type, getFontStyles(), getFontSize());
-    }
-
-    public void setFontStyles(int style){
-        if (fontStyle == Font.PLAIN && style == Font.BOLD)
-            fontStyle = Font.BOLD;
-         else if (fontStyle == Font.BOLD && style == Font.BOLD)
-            fontStyle = Font.PLAIN;
-         else if (fontStyle == Font.PLAIN && style == Font.ITALIC)
-            fontStyle = Font.ITALIC;
-         else if (fontStyle == Font.ITALIC && style == Font.ITALIC)
-            fontStyle = Font.PLAIN;
-         else if (fontStyle == Font.BOLD && style == Font.ITALIC)
-            fontStyle = Font.BOLD + Font.ITALIC;
-         else if (fontStyle == Font.ITALIC && style == Font.BOLD)
-            fontStyle = Font.BOLD + Font.ITALIC;
-         else if (fontStyle == Font.BOLD + Font.ITALIC && style == Font.BOLD)
-            fontStyle = Font.ITALIC;
-         else if (fontStyle == Font.BOLD + Font.ITALIC && style == Font.ITALIC)
-            fontStyle = Font.BOLD;
-
-
-        panelFont = new Font(getFontType(), fontStyle, getFontSize());
     }
 
     public Caret getCaret(){
@@ -146,7 +125,7 @@ public class TextPanel  extends JComponent{
         this.lines = lines;
     }
 
-    public void createInput(){
+    public void createInput(MainWindow mainWindow){
         caret = new Caret(mainWindow);
         new CaretTimer(this);
         Line newLine = new Line(mainWindow);
@@ -160,7 +139,7 @@ public class TextPanel  extends JComponent{
         lines.get(caret.getCaretY()).removeBack(lost);
         lines.add(caret.getCaretY()+1, newLine);
         caret.setCaretX(0);
-        caret.moveCaretToDown();
+        caret.moveCaretToDown(this);
     }
 
     public void deleteChar() {
@@ -173,10 +152,10 @@ public class TextPanel  extends JComponent{
                 }
             }
             lines.remove(caret.getCaretY());
-            caret.moveCaretToUP();
+            caret.moveCaretToUP(this);
         } else{
             lines.get(caret.getCaretY()).remove(caret.getCaretX());
-            caret.moveCaretToLeft();
+            caret.moveCaretToLeft(this);
         }
     }
 
@@ -205,7 +184,7 @@ public class TextPanel  extends JComponent{
                 }
             }
         }
-        mainWindow.updateWindow();
+
     }
 
     public void changeTypeFont(String type){
@@ -218,7 +197,6 @@ public class TextPanel  extends JComponent{
                 }
             }
         }
-        mainWindow.updateWindow();
     }
 
     public void changeStyleOnBold(){
@@ -246,7 +224,7 @@ public class TextPanel  extends JComponent{
                 }
             }
         }
-        mainWindow.updateWindow();
+
     }
 
     public void changeStyleOnItalic(){
@@ -271,7 +249,6 @@ public class TextPanel  extends JComponent{
                 }
             }
         }
-        mainWindow.updateWindow();
     }
 
     public void copy() {
@@ -301,7 +278,7 @@ public class TextPanel  extends JComponent{
                     newLine();
                 } else {
                     lines.get(caret.getCaretY()).add(caret.getCaretX(), s.charAt(index));
-                    caret.moveCaretToRight();
+                    caret.moveCaretToRight(this);
                 }
             }
         } catch(Exception e) {
@@ -350,6 +327,7 @@ public class TextPanel  extends JComponent{
         }
         return setCaret;
     }
+
     public boolean deleteAllText(){
         boolean setCaret = true;
         for (int y = lines.size() - 1; y >= 0; y--) {
@@ -390,12 +368,12 @@ public class TextPanel  extends JComponent{
     public void inputCharKey(char keyChar){
         deleteSelectedText();
         lines.get(caret.getCaretY()).add(caret.getCaretX(), keyChar);
-        caret.moveCaretToRight();
+        caret.moveCaretToRight(this);
     }
 
     public void click(Point point) {
         for (Line line : lines) {
-            line.checkEndLine(point);
+            checkEndLine(point,line);
             for (Char ch : line.getChars()) {
                 if (ch.contains(point)) {
                     caret.setCaretY(lines.indexOf(line));
@@ -403,12 +381,11 @@ public class TextPanel  extends JComponent{
                 }
             }
         }
-        mainWindow.updateWindow();
     }
 
     public void click(Point one, Point two) {
         for (Line line : lines) {
-            line.checkEndLine(two);
+            checkEndLine(two,line);
             for (Char ch : line.getChars()) {
                 ch.setIsSelect(ch.contains(one, two));
                 if (ch.contains(two)) {
@@ -417,7 +394,46 @@ public class TextPanel  extends JComponent{
                 }
             }
         }
-        mainWindow.updateWindow();
+    }
+
+    public void drawCaret() {
+        int caretCoordinateX = caret.getCaretCoordinateX();
+        int caretCoordinateY = caret.getCaretCoordinateY();
+        Graphics2D graphics2d = (Graphics2D) this.getGraphics();
+        Font font = this.getFont();
+        graphics2d.setFont(font);
+        FontMetrics fm =  graphics2d.getFontMetrics();
+        graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        graphics2d.setColor(this.getBackground());
+        graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
+    }
+
+    public void followCaret(JFrame frame,JScrollPane scrollPanel) {
+        int x = 0;
+        if (this.getCaret().getCaretCoordinateX() > frame.getWidth()) {
+            x = this.getCaret().getCaretCoordinateX();
+        }
+        int y = this.getCaret().getCaretCoordinateY() -
+                this.getLines().get(this.getCaret().getCaretY()).getMaxHight();
+        JViewport scrollP = scrollPanel.getViewport();
+        scrollP.setViewPosition(new Point(x, y));
+        scrollPanel.setViewport(scrollP);
+    }
+
+    public void checkEndLine(Point2D point,Line line) {
+        boolean b = line.getCoordinateY() -line.getMaxHight() <= point.getY();
+        if (b){
+            caret.setCaretX(line.getChars().size());
+            caret.setCaretY(line.getNumberLine());
+            if (START_COORDINATE >= point.getX()){
+                caret.setCaretX(0);
+            }
+        }
     }
 
 
