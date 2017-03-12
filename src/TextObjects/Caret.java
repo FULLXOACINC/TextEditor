@@ -14,7 +14,7 @@ public class Caret {
     private int caretCoordinateX;
     private int caretCoordinateY;
 
-    public Caret(MainWindow mainWindow) {
+    public Caret() {
         caretX = 0;
         caretY = 0;
     }
@@ -51,52 +51,6 @@ public class Caret {
         caretCoordinateY = y;
     }
 
-    public void moveCaretToRight(TextPanel textPanel) {
-        boolean isTextEnd = textPanel.getLines().get(getCaretY()).size() == caretX && textPanel.getLines().size() == caretY + 1;
-        boolean isLineNotEnd = textPanel.getLines().get(getCaretY()).size() > caretX;
-        boolean isCanMoveDown= caretY < textPanel.getLines().size() - 1;
-
-        if (isTextEnd) {
-            return;
-        } else if (isLineNotEnd) {
-            caretX++;
-        } else if (isCanMoveDown) {
-            caretY++;
-            setCaretX(0);
-        }
-    }
-
-    public void moveCaretToDown(TextPanel textPanel) {
-        boolean isLinesNotEnds=caretY < textPanel.getLines().size() - 1;
-        boolean isNextLineLess=textPanel.getLines().get(getCaretY()).size() < caretX;
-
-        if (isLinesNotEnds) {
-            caretY++;
-            if (isNextLineLess) {
-                setCaretX(textPanel.getLines().get(getCaretY()).size());
-            }
-        }
-    }
-
-    public void moveCaretToLeft(TextPanel textPanel) {
-        if (caretX == 0 && caretY == 0)
-            return;
-        else
-            if (caretX != 0)
-            caretX--;
-            else {
-                moveCaretToUP(textPanel);
-                setCaretX(textPanel.getLines().get(getCaretY()).size());
-            }
-    }
-
-    public void moveCaretToUP(TextPanel textPanel) {
-        if (caretY != 0) {
-            caretY--;
-            if (textPanel.getLines().get(getCaretY()).size() < caretX)
-                setCaretX(textPanel.getLines().get(getCaretY()).size());
-        }
-    }
 
 
 

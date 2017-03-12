@@ -1,9 +1,6 @@
 package TextObjects;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
-import Window.MainWindow;
-import Window.TextPanel;
 
 
 /**
@@ -11,7 +8,6 @@ import Window.TextPanel;
  */
 public class Char{
 
-    private TextPanel textPanel;
     private Font font;
     private Boolean isSelect;
     private char ch;
@@ -22,23 +18,20 @@ public class Char{
     private int fontStyle;
     private int numberLine;
 
-    public Char(char ch, MainWindow mainWindow){
-        textPanel = mainWindow.getTextPanel();
+    public Char(char ch, Font font){
         this.ch = ch;
         isSelect = false;
-        font = textPanel.getFont();
+        this.font = font;
     }
 
-    public Char(Char ch, MainWindow mainWindow) {
-        textPanel = mainWindow.getTextPanel();
+    public Char(Char ch) {
         this.ch = ch.getCharCh();
         this.font = ch.getFont();
         this.isSelect = ch.getIsSelect();
         this.fontStyle = ch.getFontStyles();
     }
 
-    public Char(char ch, String font, String style, String size, MainWindow mainWindow) {
-        textPanel = mainWindow.getTextPanel();
+    public Char(char ch, String font, String style, String size) {
         this.ch = ch;
         this.font = new Font(font, Integer.parseInt(style) , Integer.parseInt(size));
         this.isSelect = false;
@@ -98,27 +91,6 @@ public class Char{
         font = new Font(getFontType(), getFontStyles(), size);
     }
 
-    public boolean contains(Point2D point){
-        return (x <= point.getX() && x+wight >= point.getX() && y-height <= point.getY() && y >= point.getY());
-    }
-
-    public boolean contains(Point one, Point two) {
-        int height = textPanel.getLines().get(numberLine).getMaxHight();
-        Point upPoint = (one.getY() < two.getY()) ? one : two;
-        Point downPoint = (one.getY() < two.getY()) ? two : one;
-        Point leftPoint = (one.getX() < two.getX()) ? one : two;
-        Point rightPoint = (one.getX() < two.getX()) ? two : one;
-        if (y < downPoint.getY() || y-height > upPoint.getY()) {
-            return ((x >= upPoint.getX()) && y - height < upPoint.getY() && y >= upPoint.getY() ||
-                    (x <= downPoint.getX()) && y - height < downPoint.getY() && y >= downPoint.getY() ||
-                    (y - height >= upPoint.getY() && y < downPoint.getY()));
-        } else {
-            return (y-height <= leftPoint.getY() && y >= leftPoint.getY()) &&
-                    (y-height <= rightPoint.getY() && y >= rightPoint.getY()) &&
-                    (x > leftPoint.getX() && x <= rightPoint.getX());
-        }
-    }
-
     public void setNumberLine(int number){
         numberLine = number;
     }
@@ -157,5 +129,9 @@ public class Char{
         } else if (fontStyle == Font.BOLD) {
             fontStyle = Font.BOLD + Font.ITALIC;
         }
+    }
+
+    public int getNumberLine() {
+        return numberLine;
     }
 }

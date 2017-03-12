@@ -49,7 +49,7 @@ public class FileWorker {
 
     private void openXMLFile(String fileName) {
         try {
-            Line newLine = new Line(mainWindow);
+            Line newLine = new Line();
             textPanel.setLines(new ArrayList<Line>());
             XMLStreamReader xmlReader = XMLInputFactory.newInstance()
                     .createXMLStreamReader(fileName, new FileInputStream(fileName));
@@ -57,7 +57,7 @@ public class FileWorker {
                 xmlReader.next();
                 if (xmlReader.isStartElement()) {
                     if (xmlReader.getLocalName().equals("Line")){
-                        newLine = new Line(mainWindow);
+                        newLine = new Line();
                     }
                     else if (xmlReader.getLocalName().equals("Char")){
                         String font = xmlReader.getAttributeValue(null, "Font");
@@ -85,10 +85,10 @@ public class FileWorker {
             String line;
             textPanel.setLines(new ArrayList<Line>());
             while( ( line = reader.readLine() ) != null ) {
-                Line newLine = new Line(mainWindow);
+                Line newLine = new Line();
                 char [] newCharArray = line.toCharArray ();
                 for (char ch: newCharArray){
-                    newLine.add(ch);
+                    newLine.add(ch,textPanel.getFont());
                 }
                 textPanel.getLines().add(newLine);
             }

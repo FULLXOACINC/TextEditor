@@ -11,26 +11,24 @@ import Window.TextPanel;
  */
 public class CaretKeyListener implements KeyListener {
 
-    private Caret caret;
     private TextPanel textPanel;
 
     public CaretKeyListener(MainWindow mainWindow){
         textPanel = mainWindow.getTextPanel();
-        caret = textPanel.getCaret();
     }
 
     public void keyPressed(KeyEvent keyEvent) {
         if (!keyEvent.isShiftDown() && KeyEvent.VK_LEFT == keyEvent.getKeyCode()) {
-            caret.moveCaretToLeft(textPanel);
+            textPanel.moveCaretToLeft();
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_RIGHT == keyEvent.getKeyCode()) {
-            caret.moveCaretToRight(textPanel);
+            textPanel.moveCaretToRight();
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_UP == keyEvent.getKeyCode()) {
-            caret.moveCaretToUP(textPanel);
+            textPanel.moveCaretToUP();
             textPanel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_DOWN == keyEvent.getKeyCode()) {
-            caret.moveCaretToDown(textPanel);
+            textPanel.moveCaretToDown();
             textPanel.falseAllSelection();
         }
     }

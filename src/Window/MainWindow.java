@@ -25,11 +25,11 @@ public class MainWindow {
     public MainWindow() {
         frame = new JFrame("TextEditor");
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        textPanel = new TextPanel(this);
+        textPanel = new TextPanel();
         scrollPanel = new JScrollPane(textPanel);
         fileWork = new FileWorker(this);
         menuPanel = createMenuPanel();
-        textPanel.createInput(this);
+        textPanel.createInput();
 
         menuBar = createMenuBar();
         frame.setJMenuBar(menuBar);
@@ -132,6 +132,7 @@ public class MainWindow {
 
 
     }
+
     private JButton makeButton(JButton button, String imgString, ActionListener action){
         button.addActionListener(action);
         ImageIcon img = new ImageIcon("img/"+imgString);
@@ -329,12 +330,15 @@ public class MainWindow {
     public TextPanel getTextPanel(){
         return textPanel;
     }
+
     public JScrollPane getScrollPanel(){
         return scrollPanel;
     }
+
     public FileWorker getFileWork() {
         return fileWork;
     }
+
     public JFrame getFrame() {
         return frame;
     }

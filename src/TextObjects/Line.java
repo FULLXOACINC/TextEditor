@@ -1,41 +1,40 @@
 package TextObjects;
 
-import Window.MainWindow;
 
+import java.awt.*;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by alex on 19.2.17.
  */
 public class Line {
 
-    private MainWindow mainWindow;
     private int maxHight;
     private int maxLength;
     private int coordinateY;
     private int numberLine;
-    private LinkedList<Char> chars = new LinkedList<Char>();
+    private List<Char> chars = new LinkedList<Char>();
 
-    public Line(MainWindow mainWindow) {
-        this.mainWindow = mainWindow;
+    public Line() {
         maxHight = 15;
         maxLength = 0;
     }
 
-    public LinkedList<Char> getChars(){
+    public List<Char> getChars(){
         return chars;
     }
 
-    public void add(char ch) {
-        chars.add(new Char(ch, mainWindow));
+    public void add(char ch,Font font) {
+        chars.add(new Char(ch,font));
     }
 
     public void add(Char ch) {
-        chars.add(new Char(ch, mainWindow));
+        chars.add(new Char(ch));
     }
 
-    public void add(int index, char ch) {
-        chars.add(index, new Char(ch, mainWindow));
+    public void add(int index, char ch, Font font) {
+        chars.add(index, new Char(ch,font));
     }
 
     public void remove(int caretX) {
@@ -47,7 +46,7 @@ public class Line {
     }
 
     public Line copySubLine(int x1, int x2){
-        Line newLine = new Line(mainWindow);
+        Line newLine = new Line();
         for (int index = x1; index < x2; index++){
             newLine.add(this.chars.get(index));
         }
@@ -92,6 +91,6 @@ public class Line {
     public void setMaxHightNumber(int value) { maxHight = value;}
 
     public void add(String text, String font, String style, String size) {
-        chars.add(new Char(text.charAt(0), font, style, size, mainWindow));
+        chars.add(new Char(text.charAt(0), font, style, size));
     }
 }
