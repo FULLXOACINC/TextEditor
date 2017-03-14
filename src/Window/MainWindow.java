@@ -4,10 +4,7 @@ import Listeners.*;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
+import java.awt.event.*;
 import java.util.Arrays;
 
 
@@ -15,10 +12,8 @@ import java.util.Arrays;
  * Created by alex on 17.2.17.
  */
 public class MainWindow {
-    private JMenuBar menuBar;
     private JScrollPane scrollPanel;
     private JFrame frame;
-    private JToolBar menuPanel;
     private TextPanel textPanel;
     private FileWorker fileWork;
 
@@ -27,12 +22,12 @@ public class MainWindow {
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         textPanel = new TextPanel();
         scrollPanel = new JScrollPane(textPanel);
-        fileWork = new FileWorker(this);
-        menuPanel = createMenuPanel();
+        fileWork = new FileWorker(textPanel);
+        JToolBar menuPanel = createMenuPanel();
         textPanel.createInput();
-
-        menuBar = createMenuBar();
+        JMenuBar menuBar = createMenuBar();
         frame.setJMenuBar(menuBar);
+
         frame.add(menuPanel,BorderLayout.PAGE_START);
         frame.add(scrollPanel, BorderLayout.CENTER);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -41,8 +36,10 @@ public class MainWindow {
         frame.setVisible(true);
         frame.setResizable(true);
         TextMouseListener textMouseListener = new TextMouseListener(this);
+
         textPanel.addMouseListener(textMouseListener);
         textPanel.addMouseMotionListener(textMouseListener);
+
         scrollPanel.getHorizontalScrollBar().addAdjustmentListener(new AdjustmentListener() {
             public void adjustmentValueChanged(AdjustmentEvent evt) {
                 updateWindow();
@@ -53,11 +50,13 @@ public class MainWindow {
                 updateWindow();
             }
         });
+
         frame.addWindowListener(new MainWindowListener(this));
-        frame.addKeyListener(new CaretKeyListener(this));
-        frame.addKeyListener(new CtrlKeyListener(this));
-        frame.addKeyListener(new DeleteKeyListener(this));
+        frame.addKeyListener(new CaretKeyListener(textPanel));
+        frame.addKeyListener(new CtrlKeyListener(textPanel));
+        frame.addKeyListener(new DeleteKeyListener(textPanel));
         frame.addKeyListener(new TextKeyListener(this));
+
     }
 
     private JToolBar createMenuPanel() {
@@ -159,6 +158,7 @@ public class MainWindow {
                         JOptionPane.YES_NO_OPTION);
                 if(answer==0)
                     fileWork.newFile();
+                updateWindow();
 
             }
         });
@@ -169,6 +169,7 @@ public class MainWindow {
         openItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 fileWork.openFile();
+                updateWindow();
             }
         });
 
@@ -178,6 +179,7 @@ public class MainWindow {
         saveItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 fileWork.saveFile();
+                updateWindow();
             }
         });
 
@@ -198,7 +200,6 @@ public class MainWindow {
                     return;
                 if(answer==0){
                     fileWork.saveFile();
-                    return;
                 }
                 System.exit(0);
 

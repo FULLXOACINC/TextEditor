@@ -13,8 +13,8 @@ public class CaretKeyListener implements KeyListener {
 
     private TextPanel textPanel;
 
-    public CaretKeyListener(MainWindow mainWindow){
-        textPanel = mainWindow.getTextPanel();
+    public CaretKeyListener(TextPanel textPanel){
+        this.textPanel = textPanel;
     }
 
     public void keyPressed(KeyEvent keyEvent) {

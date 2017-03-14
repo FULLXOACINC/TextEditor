@@ -18,12 +18,11 @@ import java.util.ArrayList;
  * Created by alex on 20.2.17.
  */
 public class FileWorker {
-    private MainWindow mainWindow;
+
     private TextPanel textPanel;
 
-    public FileWorker(MainWindow mainWindow){
-        this.mainWindow = mainWindow;
-        textPanel = mainWindow.getTextPanel();
+    public FileWorker(TextPanel textPanel){
+        this.textPanel = textPanel;
     }
 
     public void openFile(){
@@ -72,7 +71,6 @@ public class FileWorker {
                     }
                 }
             }
-            mainWindow.updateWindow();
         } catch (Exception e){
             JOptionPane.showMessageDialog
                     (null, "Can't open file", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -92,7 +90,7 @@ public class FileWorker {
                 }
                 textPanel.getLines().add(newLine);
             }
-            mainWindow.updateWindow();
+
         }
         catch ( IOException e ) {
             JOptionPane.showMessageDialog
@@ -135,7 +133,6 @@ public class FileWorker {
 
     public void newFile() {
         textPanel.deleteAllText();
-        mainWindow.updateWindow();
     }
 
 }

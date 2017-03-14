@@ -12,8 +12,8 @@ import java.awt.event.KeyListener;
 public class CtrlKeyListener implements KeyListener {
     private TextPanel textPanel;
 
-    public CtrlKeyListener(MainWindow mainWindow){
-        textPanel = mainWindow.getTextPanel();
+    public CtrlKeyListener(TextPanel textPanel){
+        this.textPanel = textPanel;
     }
 
     @Override
