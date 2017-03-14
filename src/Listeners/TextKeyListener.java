@@ -4,6 +4,8 @@ package Listeners;
 import Window.MainWindow;
 import Window.TextPanel;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -29,7 +31,11 @@ public class TextKeyListener implements KeyListener {
         if (KeyEvent.VK_ENTER == keyEvent.getKeyCode()) {
             textPanel.enterKey();
         }
-        textPanel.followCaret(mainWindow.getFrame(),mainWindow.getScrollPanel());
+        int width=mainWindow.getFrame().getWidth();
+        Point point=textPanel.followCaret(width);
+        JViewport scrollP = mainWindow.getScrollPanel().getViewport();
+        scrollP.setViewPosition(point);
+        mainWindow.getScrollPanel().setViewport(scrollP);
         mainWindow.updateWindow();
     }
 

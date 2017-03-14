@@ -412,16 +412,14 @@ public class TextPanel  extends JComponent{
         graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
     }
 
-    public void followCaret(JFrame frame,JScrollPane scrollPanel) {
+    public Point followCaret(int width) {
         int x = 0;
-        if (this.getCaret().getCaretCoordinateX() > frame.getWidth()) {
+        if (this.getCaret().getCaretCoordinateX() > width)
             x = this.getCaret().getCaretCoordinateX();
-        }
+
         int y = this.getCaret().getCaretCoordinateY() -
                 this.getLines().get(this.getCaret().getCaretY()).getMaxHight();
-        JViewport scrollP = scrollPanel.getViewport();
-        scrollP.setViewPosition(new Point(x, y));
-        scrollPanel.setViewport(scrollP);
+        return new Point(x, y);
     }
 
     private void checkEndLine(Point2D point,Line line) {
