@@ -2,8 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba4a3aa3-3287-4b4d-823c-172a06ccbfb0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/TextPanel$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/TextPanel.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Window/TextPanel.java" afterPath="$PROJECT_DIR$/src/Window/TextPanel/TextPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Listeners/CaretKeyListener.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Listeners/CaretKeyListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Listeners/CtrlKeyListener.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Listeners/CtrlKeyListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Listeners/DeleteKeyListener.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Listeners/DeleteKeyListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Listeners/FileWorker.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Listeners/FileWorker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Listeners/TextKeyListener.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Listeners/TextKeyListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Listeners/TextMouseListener.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Listeners/TextMouseListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/TextObjects/Caret.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/TextObjects/Caret.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$1.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$10.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$11.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$12.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$13.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$14.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$15.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$16.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$17.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$18.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$19.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$2.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$20.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$21.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$22.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$22.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$3.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$4.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$5.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$6.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$7.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$8.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$9.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow.class" afterPath="$PROJECT_DIR$/out/production/TextEditor/Window/MainWindow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listeners/CaretKeyListener.java" afterPath="$PROJECT_DIR$/src/Listeners/CaretKeyListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listeners/CtrlKeyListener.java" afterPath="$PROJECT_DIR$/src/Listeners/CtrlKeyListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listeners/DeleteKeyListener.java" afterPath="$PROJECT_DIR$/src/Listeners/DeleteKeyListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listeners/FileWorker.java" afterPath="$PROJECT_DIR$/src/Listeners/FileWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listeners/TextKeyListener.java" afterPath="$PROJECT_DIR$/src/Listeners/TextKeyListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window/TextPanel.java" afterPath="$PROJECT_DIR$/src/Window/TextPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Listeners/TextMouseListener.java" afterPath="$PROJECT_DIR$/src/Listeners/TextMouseListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TextObjects/Caret.java" afterPath="$PROJECT_DIR$/src/TextObjects/Caret.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Window/MainWindow.java" afterPath="$PROJECT_DIR$/src/Window/MainWindow.java" />
     </list>
     <ignored path="TextEditor.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,67 +65,94 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TextPanel.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Window/TextPanel.java">
+      <file leaf-file-name="TextPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1408">
-              <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
+            <state relative-caret-position="414">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#click#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#click#1;class#TextPanel#0" expanded="false" />
-                <element signature="method#drawCaret#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#followCaret#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#checkEndLine#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#contains#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#contains#1;class#TextPanel#0" expanded="false" />
-                <element signature="method#CaretTimer#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#moveCaretToRight#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#moveCaretToDown#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#moveCaretToLeft#0;class#TextPanel#0" expanded="false" />
-                <element signature="method#moveCaretToUP#0;class#TextPanel#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CaretKeyListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Listeners/CaretKeyListener.java">
+      <file leaf-file-name="DeleteKeyListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Listeners/DeleteKeyListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding>
-                <element signature="e#342#343#0" expanded="true" />
-                <element signature="e#384#385#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextKeyListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Listeners/TextKeyListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
+            <state relative-caret-position="360">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextPanelModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanelModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-185">
+              <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#639#645#0" expanded="true" />
+                <element signature="e#1518#1519#0" expanded="true" />
+                <element signature="e#1546#1547#0" expanded="true" />
+                <element signature="method#checkEndLine#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#contains#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#contains#1;class#TextPanelModel#0" expanded="false" />
+                <element signature="e#3780#3781#0" expanded="true" />
+                <element signature="e#3833#3834#0" expanded="true" />
+                <element signature="method#moveCaretToRight#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#moveCaretToDown#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#moveCaretToLeft#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#moveCaretToUP#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#createInput#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#newLine#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#deleteChar#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#deleteNextChar#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#changeSizeFont#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#changeTypeFont#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#changeStyleOnBold#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#changeStyleOnItalic#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#copy#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#paste#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#cut#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#deleteSelectedText#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#deleteAllText#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#falseAllSelection#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#enterKey#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#inputCharKey#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#click#0;class#TextPanelModel#0" expanded="false" />
+                <element signature="method#click#1;class#TextPanelModel#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FileWorker.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Listeners/FileWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+              <folding>
+                <element signature="method#getExtension#0;class#FileWorker#0" expanded="false" />
+                <element signature="method#openTextFile#0;class#FileWorker#0" expanded="false" />
+                <element signature="method#saveFile#0;class#FileWorker#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Window/MainWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="235">
+              <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,17 +212,21 @@
         <option value="$PROJECT_DIR$/src/Window/MenuBar.java" />
         <option value="$PROJECT_DIR$/src/Listeners/MouseListener.java" />
         <option value="$PROJECT_DIR$/src/TextObjects/CaretTimer.java" />
-        <option value="$PROJECT_DIR$/src/Listeners/TextMouseListener.java" />
         <option value="$PROJECT_DIR$/src/TextObjects/Line.java" />
         <option value="$PROJECT_DIR$/src/TextObjects/Caret.java" />
         <option value="$PROJECT_DIR$/src/TextObjects/Char.java" />
-        <option value="$PROJECT_DIR$/src/Listeners/FileWorker.java" />
+        <option value="$PROJECT_DIR$/src/Window/TextPanel.java" />
+        <option value="$PROJECT_DIR$/src/Window/TextPanel/TextPanelView.java" />
+        <option value="$PROJECT_DIR$/src/Window/TextPanel/TextPanelContriler.java" />
         <option value="$PROJECT_DIR$/src/Listeners/CaretKeyListener.java" />
         <option value="$PROJECT_DIR$/src/Listeners/CtrlKeyListener.java" />
         <option value="$PROJECT_DIR$/src/Listeners/DeleteKeyListener.java" />
-        <option value="$PROJECT_DIR$/src/Window/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/Listeners/TextKeyListener.java" />
-        <option value="$PROJECT_DIR$/src/Window/TextPanel.java" />
+        <option value="$PROJECT_DIR$/src/Listeners/FileWorker.java" />
+        <option value="$PROJECT_DIR$/src/Listeners/TextMouseListener.java" />
+        <option value="$PROJECT_DIR$/src/Window/TextPanel/TextPanelModel.java" />
+        <option value="$PROJECT_DIR$/src/Window/TextPanel/TextPanel.java" />
+        <option value="$PROJECT_DIR$/src/Window/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -230,6 +301,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Window" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextEditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Window" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextPanel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -778,12 +871,12 @@
       <workItem from="1489135920354" duration="30000" />
       <workItem from="1489139858006" duration="289000" />
       <workItem from="1489334810530" duration="5682000" />
-      <workItem from="1489517443428" duration="4477000" />
+      <workItem from="1489517443428" duration="10638000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119332000" />
+    <option name="totallyTimeSpent" value="125493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
@@ -796,9 +889,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5123506" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.4876494" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32817337" sideWeight="0.4876494" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.49721116" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.49721116" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21035856" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -816,6 +909,34 @@
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5123506" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884902" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39910313" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.4876494" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32507738" sideWeight="0.49721116" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21035856" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.4876494" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -830,7 +951,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="33" />
+      <option name="time" value="34" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -839,21 +960,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Window/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="83" column="59" selection-start-line="83" selection-start-column="59" selection-end-line="83" selection-end-column="59" />
-          <folding>
-            <element signature="class#1319:1467" expanded="false" />
-            <element signature="class#1539:1687" expanded="false" />
-            <element signature="method#createMenuPanel#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ControlKeyListener.java" />
     <entry file="file://$PROJECT_DIR$/src/TextObjects/Char.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -874,14 +980,14 @@
         <state relative-caret-position="378">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="method#openFile#0;class#FileWorker#0" expanded="false" />
             <element signature="method#getExtension#0;class#FileWorker#0" expanded="false" />
+            <element signature="method#openTextFile#0;class#FileWorker#0" expanded="false" />
             <element signature="method#saveFile#0;class#FileWorker#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -889,36 +995,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#1;class#TextPanel#0" expanded="false" />
             <element signature="method#drawCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#followCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#checkEndLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#1;class#TextPanel#0" expanded="false" />
-            <element signature="method#CaretTimer#0;class#TextPanel#0" expanded="false" />
-            <element signature="e#15935#15936#0" expanded="true" />
-            <element signature="e#15988#15989#0" expanded="true" />
-            <element signature="method#moveCaretToRight#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToDown#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToLeft#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToUP#0;class#TextPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -977,9 +1054,7 @@
         <state relative-caret-position="990">
           <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <element signature="class#1319:1467" expanded="false" />
-            <element signature="class#1539:1687" expanded="false" />
-            <element signature="method#createMenuPanel#0;class#MainWindow#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
@@ -1007,14 +1082,14 @@
         <state relative-caret-position="378">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
-            <element signature="method#openFile#0;class#FileWorker#0" expanded="false" />
             <element signature="method#getExtension#0;class#FileWorker#0" expanded="false" />
+            <element signature="method#openTextFile#0;class#FileWorker#0" expanded="false" />
             <element signature="method#saveFile#0;class#FileWorker#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1022,36 +1097,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#1;class#TextPanel#0" expanded="false" />
             <element signature="method#drawCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#followCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#checkEndLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#1;class#TextPanel#0" expanded="false" />
-            <element signature="method#CaretTimer#0;class#TextPanel#0" expanded="false" />
-            <element signature="e#15935#15936#0" expanded="true" />
-            <element signature="e#15988#15989#0" expanded="true" />
-            <element signature="method#moveCaretToRight#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToDown#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToLeft#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToUP#0;class#TextPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1062,9 +1108,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1319:1467" expanded="false" />
-            <element signature="class#1539:1687" expanded="false" />
-            <element signature="method#createMenuPanel#0;class#MainWindow#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
@@ -1086,7 +1130,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
@@ -1094,36 +1138,7 @@
             <element signature="imports" expanded="true" />
             <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
             <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#1;class#TextPanel#0" expanded="false" />
             <element signature="method#drawCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#followCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#checkEndLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#1;class#TextPanel#0" expanded="false" />
-            <element signature="method#CaretTimer#0;class#TextPanel#0" expanded="false" />
-            <element signature="e#15935#15936#0" expanded="true" />
-            <element signature="e#15988#15989#0" expanded="true" />
-            <element signature="method#moveCaretToRight#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToDown#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToLeft#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToUP#0;class#TextPanel#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1134,9 +1149,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1319:1467" expanded="false" />
-            <element signature="class#1539:1687" expanded="false" />
-            <element signature="method#createMenuPanel#0;class#MainWindow#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
@@ -1196,67 +1209,99 @@
     <entry file="file://$PROJECT_DIR$/src/Window/MenuPanel.java" />
     <entry file="file://$PROJECT_DIR$/src/Window/MenuBar.java" />
     <entry file="file://$PROJECT_DIR$/src/TextObjects/CaretTimer.java" />
-    <entry file="file://$PROJECT_DIR$/src/TextObjects/Caret.java">
+    <entry file="file://$PROJECT_DIR$/src/Listeners/MouseListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="method#Caret#0;class#Caret#0" expanded="false" />
-            <element signature="e#348#349#0" expanded="false" />
-            <element signature="e#377#378#0" expanded="false" />
-            <element signature="e#413#414#0" expanded="false" />
-            <element signature="e#439#440#0" expanded="false" />
-            <element signature="e#469#470#0" expanded="false" />
-            <element signature="e#498#499#0" expanded="false" />
-            <element signature="e#534#535#0" expanded="false" />
-            <element signature="e#560#561#0" expanded="false" />
-            <element signature="e#600#601#0" expanded="false" />
-            <element signature="e#639#640#0" expanded="false" />
-            <element signature="e#685#686#0" expanded="false" />
-            <element signature="e#721#722#0" expanded="false" />
-            <element signature="e#761#762#0" expanded="false" />
-            <element signature="e#800#801#0" expanded="false" />
-            <element signature="e#846#847#0" expanded="false" />
-            <element signature="e#882#883#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="216">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="18" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listeners/MainWindowListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TextObjects/Line.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="-780">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
-            <element signature="e#426#427#0" expanded="false" />
-            <element signature="e#454#455#0" expanded="false" />
-            <element signature="e#572#573#0" expanded="false" />
-            <element signature="e#611#612#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#716#717#0" expanded="false" />
-            <element signature="e#754#755#0" expanded="false" />
-            <element signature="e#792#793#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#867#868#0" expanded="false" />
-            <element signature="e#1295#1296#0" expanded="false" />
-            <element signature="e#1345#1346#0" expanded="false" />
-            <element signature="e#1377#1378#0" expanded="false" />
-            <element signature="e#1408#1409#0" expanded="false" />
-            <element signature="e#1433#1434#0" expanded="false" />
-            <element signature="e#1468#1469#0" expanded="false" />
-            <element signature="e#1647#1648#0" expanded="false" />
-            <element signature="e#1681#1682#0" expanded="false" />
-            <element signature="e#1726#1727#0" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1800#1801#0" expanded="false" />
-            <element signature="e#1833#1834#0" expanded="false" />
             <element signature="method#add#3;class#Line#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TextObjects/Caret.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="method#Caret#0;class#Caret#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listeners/CtrlKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+          <folding>
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#415#416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listeners/TextKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listeners/TextMouseListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listeners/CaretKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#350#351#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanelContriler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Listeners/DeleteKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TextObjects/Char.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
+        <state relative-caret-position="454">
           <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding>
             <element signature="method#Char#0;class#Char#0" expanded="false" />
@@ -1269,133 +1314,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/FileWorker.java">
+    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanelModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1296">
-          <caret line="134" column="34" selection-start-line="134" selection-start-column="34" selection-end-line="134" selection-end-column="34" />
+        <state relative-caret-position="-185">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
           <folding>
-            <element signature="method#openFile#0;class#FileWorker#0" expanded="false" />
-            <element signature="method#getExtension#0;class#FileWorker#0" expanded="false" />
-            <element signature="method#saveFile#0;class#FileWorker#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#639#645#0" expanded="true" />
+            <element signature="e#1518#1519#0" expanded="true" />
+            <element signature="e#1546#1547#0" expanded="true" />
+            <element signature="method#checkEndLine#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#contains#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#contains#1;class#TextPanelModel#0" expanded="false" />
+            <element signature="e#3780#3781#0" expanded="true" />
+            <element signature="e#3833#3834#0" expanded="true" />
+            <element signature="method#moveCaretToRight#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#moveCaretToDown#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#moveCaretToLeft#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#moveCaretToUP#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#createInput#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#newLine#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#deleteChar#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#deleteNextChar#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#changeSizeFont#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#changeTypeFont#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#changeStyleOnBold#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#changeStyleOnItalic#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#copy#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#paste#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#cut#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#deleteSelectedText#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#deleteAllText#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#falseAllSelection#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#enterKey#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#inputCharKey#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#click#0;class#TextPanelModel#0" expanded="false" />
+            <element signature="method#click#1;class#TextPanelModel#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/MouseListener.java">
+    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel/TextPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/CtrlKeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="16" selection-end-column="5" />
+        <state relative-caret-position="414">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding>
-            <element signature="e#314#315#0" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/DeleteKeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/MainWindowListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Window/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="58" column="0" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+        <state relative-caret-position="235">
+          <caret line="73" column="39" selection-start-line="73" selection-start-column="39" selection-end-line="73" selection-end-column="39" />
           <folding>
-            <element signature="class#1319:1467" expanded="false" />
-            <element signature="class#1539:1687" expanded="false" />
-            <element signature="method#createMenuPanel#0;class#MainWindow#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <element signature="method#makeButton#0;class#MainWindow#0" expanded="false" />
             <element signature="method#updateWindow#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/TextMouseListener.java">
+    <entry file="file://$PROJECT_DIR$/src/Listeners/FileWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="33" column="11" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/CaretKeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+        <state relative-caret-position="242">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
           <folding>
-            <element signature="e#342#343#0" expanded="true" />
-            <element signature="e#384#385#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Listeners/TextKeyListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="32" column="9" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window/TextPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1408">
-          <caret line="423" column="0" selection-start-line="423" selection-start-column="0" selection-end-line="423" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#TextPanel#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#paintComponent#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#createInput#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#newLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteNextChar#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeSizeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeTypeFont#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnBold#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#changeStyleOnItalic#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#copy#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#paste#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#cut#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteSelectedText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#deleteAllText#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#falseAllSelection#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#enterKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#inputCharKey#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#click#1;class#TextPanel#0" expanded="false" />
-            <element signature="method#drawCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#followCaret#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#checkEndLine#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#contains#1;class#TextPanel#0" expanded="false" />
-            <element signature="method#CaretTimer#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToRight#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToDown#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToLeft#0;class#TextPanel#0" expanded="false" />
-            <element signature="method#moveCaretToUP#0;class#TextPanel#0" expanded="false" />
+            <element signature="method#getExtension#0;class#FileWorker#0" expanded="false" />
+            <element signature="method#openTextFile#0;class#FileWorker#0" expanded="false" />
+            <element signature="method#saveFile#0;class#FileWorker#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -2,34 +2,33 @@ package Listeners;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import TextObjects.Caret;
-import Window.MainWindow;
-import Window.TextPanel;
+
+import Window.TextPanel.TextPanel;
+import Window.TextPanel.TextPanelModel;
 
 /**
  * Created by alex on 19.2.17.
  */
 public class CaretKeyListener implements KeyListener {
-
-    private TextPanel textPanel;
+    private TextPanelModel textPanelModel;
 
     public CaretKeyListener(TextPanel textPanel){
-        this.textPanel = textPanel;
+        this.textPanelModel = textPanel.getTextPanelModel();
     }
 
     public void keyPressed(KeyEvent keyEvent) {
         if (!keyEvent.isShiftDown() && KeyEvent.VK_LEFT == keyEvent.getKeyCode()) {
-            textPanel.moveCaretToLeft();
-            textPanel.falseAllSelection();
+            textPanelModel.moveCaretToLeft();
+            textPanelModel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_RIGHT == keyEvent.getKeyCode()) {
-            textPanel.moveCaretToRight();
-            textPanel.falseAllSelection();
+            textPanelModel.moveCaretToRight();
+            textPanelModel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_UP == keyEvent.getKeyCode()) {
-            textPanel.moveCaretToUP();
-            textPanel.falseAllSelection();
+            textPanelModel.moveCaretToUP();
+            textPanelModel.falseAllSelection();
         } else if (!keyEvent.isShiftDown() && KeyEvent.VK_DOWN == keyEvent.getKeyCode()) {
-            textPanel.moveCaretToDown();
-            textPanel.falseAllSelection();
+            textPanelModel.moveCaretToDown();
+            textPanelModel.falseAllSelection();
         }
     }
 

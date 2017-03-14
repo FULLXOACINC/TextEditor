@@ -1,7 +1,7 @@
 package Listeners;
 
-import Window.MainWindow;
-import Window.TextPanel;
+import Window.TextPanel.TextPanel;
+import Window.TextPanel.TextPanelModel;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -10,10 +10,10 @@ import java.awt.event.KeyListener;
  * Created by alex on 24.2.17.
  */
 public class CtrlKeyListener implements KeyListener {
-    private TextPanel textPanel;
+    private TextPanelModel textPanelModel;
 
     public CtrlKeyListener(TextPanel textPanel){
-        this.textPanel = textPanel;
+        this.textPanelModel = textPanel.getTextPanelModel();
     }
 
     @Override
@@ -24,11 +24,11 @@ public class CtrlKeyListener implements KeyListener {
     @Override
     public void keyPressed(KeyEvent keyEvent) {
         if (keyEvent.isControlDown() && keyEvent.getKeyCode() == KeyEvent.VK_C) {
-            textPanel.copy();
+            textPanelModel.copy();
         } else if (keyEvent.isControlDown() && keyEvent.getKeyCode() == KeyEvent.VK_X) {
-            textPanel.cut();
+            textPanelModel.cut();
         } else if (keyEvent.isControlDown() && keyEvent.getKeyCode() == KeyEvent.VK_V) {
-            textPanel.paste();
+            textPanelModel.paste();
         }
     }
 

@@ -1,7 +1,7 @@
 package Listeners;
 
-import Window.MainWindow;
-import Window.TextPanel;
+import Window.TextPanel.TextPanel;
+import Window.TextPanel.TextPanelModel;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -10,17 +10,17 @@ import java.awt.event.KeyListener;
  * Created by alex on 22.2.17.
  */
 public class DeleteKeyListener implements KeyListener {
-    private TextPanel textPanel;
+    private TextPanelModel textPanelModel;
 
     public DeleteKeyListener(TextPanel textPanel){
-        this.textPanel = textPanel;
+        this.textPanelModel = textPanel.getTextPanelModel();
     }
     @Override
     public void keyPressed(KeyEvent keyEvent) {
         if (KeyEvent.VK_BACK_SPACE == keyEvent.getKeyCode()) {
-            textPanel.backSpaceKey();
+            textPanelModel.backSpaceKey();
         } else if (KeyEvent.VK_DELETE == keyEvent.getKeyCode()) {
-            textPanel.deleteKey();
+            textPanelModel.deleteKey();
         }
     }
 
