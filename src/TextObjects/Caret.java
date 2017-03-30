@@ -1,9 +1,6 @@
 package TextObjects;
 
 
-import Window.MainWindow;
-import Window.TextPanel;
-
 /**
  * Created by alex on 19.2.17.
  */

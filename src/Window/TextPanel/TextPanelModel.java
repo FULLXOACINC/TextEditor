@@ -1,4 +1,4 @@
-package Window;
+package Window.TextPanel;
 
 import TextObjects.Caret;
 import TextObjects.Char;
@@ -10,86 +10,38 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.util.*;
 import java.util.List;
+import java.util.Timer;
 
 /**
- * Created by alex on 19.2.17.
+ * Created by alex on 12.3.17.
  */
-public class TextPanel  extends JComponent{
+public class TextPanelModel{
     private final int START_COORDINATE=10;
     private Caret caret;
     private int fontStyle;
     private Font panelFont;
+    private TextPanel textPanel;
 
     private List<Line> lines = new ArrayList<Line>();
 
-    public TextPanel(){
+    public TextPanelModel(TextPanel textPanel) {
+        this.textPanel=textPanel;
         fontStyle=Font.PLAIN;
         panelFont = new Font("Liberation Serif",fontStyle,10);
-        setLayout(new BorderLayout());
-    }
-
-    protected void paintComponent(Graphics graphics) {
-        Graphics2D graphics2d = (Graphics2D) graphics;
-        for (Line line: lines) {
-            line.setMaxHightNumber(0);
-            for (Char ch : line.getChars()) {
-                Font font = new Font(ch.getFontType(), ch.getFontStyles(), ch.getFontSize());
-                graphics2d.setFont(font);
-                FontMetrics fm = graphics2d.getFontMetrics();
-                line.setMaxHight(fm.getHeight());
-            }
-            if (line.getMaxHight() == 0) line.setMaxHightNumber(15);
-        }
-        int y=START_COORDINATE;
-        int xMax = 0;
-        int lineY=-1;
-        for (Line line: lines) {
-            y += line.getMaxHight();
-            int x=START_COORDINATE;
-            lineY++;
-            int letterX=0;
-            for (Char ch: line.getChars()) {
-                letterX++;
-                graphics2d.setColor(Color.BLACK);
-                Font font = new Font(ch.getFontType(), ch.getFontStyles(), ch.getFontSize());
-                graphics2d.setFont(font);
-                FontMetrics fm =  graphics2d.getFontMetrics();
-                if (ch.getIsSelect()) {
-                    graphics2d.setColor(Color.BLACK);
-                    Rectangle2D rect = new Rectangle
-                            (x-2, y-line.getMaxHight()+2, fm.stringWidth(ch.getStringCh())+3, line.getMaxHight());
-                    graphics2d.fill(rect);
-                    graphics2d.setColor(Color.WHITE);
-                }
-                graphics2d.drawString(ch.getStringCh(),x,y);
-                ch.setHeight(fm.getHeight());
-                ch.setWight(fm.stringWidth(ch.getStringCh()));
-                ch.setX(x);
-                ch.setY(y);
-                ch.setNumberLine(lineY);
-                x += fm.stringWidth(ch.getStringCh())+1;
-                if (caret.getCaretX() == letterX && caret.getCaretY()  == lineY){
-                    caret.setCaretCoordinateX(x);
-                    caret.setCaretCoordinateY(y);
-                }
-            }
-            line.setMaxLength(x);
-            line.setCoordinateY(y);
-            line.setNumberLine(lineY);
-            xMax = xMax < x ? x : xMax;
-            if (caret.getCaretX() == 0 && caret.getCaretY() == lineY){
-                caret.setCaretCoordinateX(START_COORDINATE);
-                caret.setCaretCoordinateY(y);
-            }
-        }
-        setPreferredSize(new Dimension(xMax + 50, y + 50));
     }
 
     public Font getFont() {
         return panelFont;
+    }
+
+    public List<Line> getLines(){
+        return lines;
+    }
+
+    public void setLines(List<Line> lines) {
+        this.lines = lines;
     }
 
     private String getFontType(){
@@ -115,18 +67,113 @@ public class TextPanel  extends JComponent{
     public Caret getCaret(){
         return caret;
     }
+    public Point followCaret(int width) {
+        int x = 0;
+        if (this.getCaret().getCaretCoordinateX() > width)
+            x = this.getCaret().getCaretCoordinateX();
 
-    public List<Line> getLines(){
-        return lines;
+        int y = this.getCaret().getCaretCoordinateY() -
+                this.getLines().get(this.getCaret().getCaretY()).getMaxHight();
+        return new Point(x, y);
     }
 
-    public void setLines(List<Line> lines) {
-        this.lines = lines;
+    private void checkEndLine(Point2D point, Line line) {
+        boolean isPointYMoreThenTextY = line.getCoordinateY() -line.getMaxHight() <= point.getY();
+        if (isPointYMoreThenTextY){
+            caret.setCaretX(line.getChars().size());
+            caret.setCaretY(line.getNumberLine());
+            if (START_COORDINATE >= point.getX()){
+                caret.setCaretX(0);
+            }
+        }
     }
 
-    void createInput(){
+    private boolean contains(Point2D point, Char ch){
+        int y=ch.getY();
+        int x=ch.getX();
+        return (x <= point.getX() && x+ch.getWight() >= point.getX() && y-ch.getHeight()  <= point.getY() && y >= point.getY());
+    }
+
+    private boolean contains(Point one, Point two,Char ch) {
+        int y=ch.getY();
+        int x=ch.getX();
+        int height = lines.get(ch.getNumberLine()).getMaxHight();
+        Point upPoint = (one.getY() < two.getY()) ? one : two;
+        Point downPoint = (one.getY() < two.getY()) ? two : one;
+        Point leftPoint = (one.getX() < two.getX()) ? one : two;
+        Point rightPoint = (one.getX() < two.getX()) ? two : one;
+        if (y < downPoint.getY() || y-height > upPoint.getY()) {
+            return ((x >= upPoint.getX()) && y - height < upPoint.getY() && y >= upPoint.getY() ||
+                    (x <= downPoint.getX()) && y - height < downPoint.getY() && y >= downPoint.getY() ||
+                    (y - height >= upPoint.getY() && y < downPoint.getY()));
+        } else {
+            return (y-height <= leftPoint.getY() && y >= leftPoint.getY()) &&
+                    (y-height <= rightPoint.getY() && y >= rightPoint.getY()) &&
+                    (x > leftPoint.getX() && x <= rightPoint.getX());
+        }
+    }
+
+    private void CaretTimer(TextPanel textPanel) {
+        final java.util.Timer time = new java.util.Timer();
+        time.schedule(new TimerTask() {
+            public void run() {
+                textPanel.drawCaret();
+            }
+        }, 500, 1000);
+    }
+
+    public void moveCaretToRight() {
+        boolean isTextEnd = lines.get(caret.getCaretY()).size() == caret.getCaretX() && lines.size() == caret.getCaretY() + 1;
+        boolean isLineNotEnd = lines.get(caret.getCaretY()).size() > caret.getCaretX();
+        boolean isCanMoveDown= caret.getCaretY() < lines.size() - 1;
+
+        if (isTextEnd) {
+            return;
+        } else if (isLineNotEnd) {
+            caret.setCaretX(caret.getCaretX()+1);
+        } else if (isCanMoveDown) {
+            caret.setCaretY(caret.getCaretY()+1);
+            caret.setCaretX(0);
+        }
+    }
+
+    public void moveCaretToDown() {
+        boolean isLinesNotEnds=caret.getCaretY() < lines.size() - 1;
+        boolean isNextLineLess=lines.get(caret.getCaretY()).size() < caret.getCaretX();
+
+        if (isLinesNotEnds) {
+            caret.setCaretY(caret.getCaretY()+1);
+            if (isNextLineLess) {
+                caret.setCaretX(lines.get(caret.getCaretY()).size());
+            }
+        }
+    }
+
+    public void moveCaretToLeft() {
+        if (caret.getCaretX() == 0 && caret.getCaretY() == 0)
+            return;
+        else
+        if (caret.getCaretX() != 0)
+            caret.setCaretX(caret.getCaretX()-1);
+        else {
+            moveCaretToUP();
+            caret.setCaretX(lines.get(caret.getCaretY()).size());
+        }
+    }
+
+    public void moveCaretToUP() {
+
+        if (caret.getCaretY() != 0) {
+            caret.setCaretY(caret.getCaretY()-1);
+            boolean isPrevLineLessCurrent=lines.get(caret.getCaretY()).size() < caret.getCaretX();
+            if (isPrevLineLessCurrent)
+                caret.setCaretX(lines.get(caret.getCaretY()).size());
+        }
+    }
+
+    public void createInput(){
         caret = new Caret();
-        CaretTimer(this);
+        CaretTimer(textPanel);
         Line newLine = new Line();
         lines.add(newLine);
     }
@@ -173,7 +220,7 @@ public class TextPanel  extends JComponent{
         }
     }
 
-    void changeSizeFont(int size){
+    public void changeSizeFont(int size){
 
         setFontSize(size);
         for (Line line: lines) {
@@ -186,7 +233,7 @@ public class TextPanel  extends JComponent{
 
     }
 
-    void changeTypeFont(String type){
+    public void changeTypeFont(String type){
 
         setFontType(type);
         for (Line line: lines) {
@@ -198,7 +245,7 @@ public class TextPanel  extends JComponent{
         }
     }
 
-    void changeStyleOnBold(){
+    public void changeStyleOnBold(){
         boolean bold = false, notBold = false;
 
         for (Line line: lines) {
@@ -226,7 +273,7 @@ public class TextPanel  extends JComponent{
 
     }
 
-    void changeStyleOnItalic(){
+    public void changeStyleOnItalic(){
         boolean italic = false, notItalic = false;
         for (Line line: lines) {
             for (Char ch : line.getChars()) {
@@ -251,11 +298,13 @@ public class TextPanel  extends JComponent{
     }
 
     public void copy() {
+
         String string = "";
         for (Line line: lines) {
+            boolean isEndLine=line.getChars().size()-1 >= 0 && line.getChars().get(line.getChars().size()-1).getIsSelect();
             for (Char ch : line.getChars())
                 if (ch.getIsSelect()) string += ch.getStringCh();
-            if (line.getChars().size()-1 >= 0 && line.getChars().get(line.getChars().size()-1).getIsSelect())
+            if (isEndLine)
                 string += "\n";
         }
         StringSelection data = new StringSelection(string);
@@ -290,11 +339,12 @@ public class TextPanel  extends JComponent{
     public void cut() {
         String string = "";
         for (Line line: lines) {
+            boolean isEndLine=line.getChars().size()-1 >= 0 && line.getChars().get(line.getChars().size()-1).getIsSelect();
             for (Char ch : line.getChars()) {
                 if (ch.getIsSelect())
                     string += ch.getStringCh();
             }
-            if (line.getChars().size()-1 >= 0 && line.getChars().get(line.getChars().size()-1).getIsSelect()){
+            if (isEndLine){
                 string += "\n";
             }
         }
@@ -394,126 +444,4 @@ public class TextPanel  extends JComponent{
             }
         }
     }
-
-    private void drawCaret() {
-        int caretCoordinateX = caret.getCaretCoordinateX();
-        int caretCoordinateY = caret.getCaretCoordinateY();
-        Graphics2D graphics2d = (Graphics2D) this.getGraphics();
-        Font font = this.getFont();
-        graphics2d.setFont(font);
-        FontMetrics fm =  graphics2d.getFontMetrics();
-        graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        graphics2d.setColor(this.getBackground());
-        graphics2d.drawLine (caretCoordinateX, caretCoordinateY, caretCoordinateX,caretCoordinateY-(int)(0.6*fm.getHeight()));
-    }
-
-    public Point followCaret(int width) {
-        int x = 0;
-        if (this.getCaret().getCaretCoordinateX() > width)
-            x = this.getCaret().getCaretCoordinateX();
-
-        int y = this.getCaret().getCaretCoordinateY() -
-                this.getLines().get(this.getCaret().getCaretY()).getMaxHight();
-        return new Point(x, y);
-    }
-
-    private void checkEndLine(Point2D point,Line line) {
-        boolean b = line.getCoordinateY() -line.getMaxHight() <= point.getY();
-        if (b){
-            caret.setCaretX(line.getChars().size());
-            caret.setCaretY(line.getNumberLine());
-            if (START_COORDINATE >= point.getX()){
-                caret.setCaretX(0);
-            }
-        }
-    }
-
-    private boolean contains(Point2D point,Char ch){
-        int y=ch.getY();
-        int x=ch.getX();
-        return (x <= point.getX() && x+ch.getWight() >= point.getX() && y-ch.getHeight()  <= point.getY() && y >= point.getY());
-    }
-
-    private boolean contains(Point one, Point two,Char ch) {
-        int y=ch.getY();
-        int x=ch.getX();
-        int height = lines.get(ch.getNumberLine()).getMaxHight();
-        Point upPoint = (one.getY() < two.getY()) ? one : two;
-        Point downPoint = (one.getY() < two.getY()) ? two : one;
-        Point leftPoint = (one.getX() < two.getX()) ? one : two;
-        Point rightPoint = (one.getX() < two.getX()) ? two : one;
-        if (y < downPoint.getY() || y-height > upPoint.getY()) {
-            return ((x >= upPoint.getX()) && y - height < upPoint.getY() && y >= upPoint.getY() ||
-                    (x <= downPoint.getX()) && y - height < downPoint.getY() && y >= downPoint.getY() ||
-                    (y - height >= upPoint.getY() && y < downPoint.getY()));
-        } else {
-            return (y-height <= leftPoint.getY() && y >= leftPoint.getY()) &&
-                    (y-height <= rightPoint.getY() && y >= rightPoint.getY()) &&
-                    (x > leftPoint.getX() && x <= rightPoint.getX());
-        }
-    }
-
-    private void CaretTimer(TextPanel textPanel) {
-        final java.util.Timer time = new java.util.Timer();
-        time.schedule(new TimerTask() {
-            public void run() {
-                textPanel.drawCaret();
-            }
-        }, 500, 1000);
-    }
-
-    public void moveCaretToRight() {
-        boolean isTextEnd = lines.get(caret.getCaretY()).size() == caret.getCaretX() && lines.size() == caret.getCaretY() + 1;
-        boolean isLineNotEnd = lines.get(caret.getCaretY()).size() > caret.getCaretX();
-        boolean isCanMoveDown= caret.getCaretY() < lines.size() - 1;
-
-        if (isTextEnd) {
-            return;
-        } else if (isLineNotEnd) {
-            caret.setCaretX(caret.getCaretX()+1);
-        } else if (isCanMoveDown) {
-            caret.setCaretY(caret.getCaretY()+1);
-            caret.setCaretX(0);
-        }
-    }
-
-    public void moveCaretToDown() {
-        boolean isLinesNotEnds=caret.getCaretY() < lines.size() - 1;
-        boolean isNextLineLess=lines.get(caret.getCaretY()).size() < caret.getCaretX();
-
-        if (isLinesNotEnds) {
-            caret.setCaretY(caret.getCaretY()+1);
-            if (isNextLineLess) {
-                caret.setCaretX(lines.get(caret.getCaretY()).size());
-            }
-        }
-    }
-
-    public void moveCaretToLeft() {
-        if (caret.getCaretX() == 0 && caret.getCaretY() == 0)
-            return;
-        else
-        if (caret.getCaretX() != 0)
-            caret.setCaretX(caret.getCaretX()-1);
-        else {
-            moveCaretToUP();
-            caret.setCaretX(lines.get(caret.getCaretY()).size());
-        }
-    }
-
-    public void moveCaretToUP() {
-        if (caret.getCaretY() != 0) {
-            caret.setCaretY(caret.getCaretY()-1);
-            if (lines.get(caret.getCaretY()).size() < caret.getCaretX())
-                caret.setCaretX(lines.get(caret.getCaretY()).size());
-        }
-    }
-
-
-
 }

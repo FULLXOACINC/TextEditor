@@ -1,6 +1,7 @@
 package Window;
 
 import Listeners.*;
+import Window.TextPanel.TextPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +25,7 @@ public class MainWindow {
         scrollPanel = new JScrollPane(textPanel);
         fileWork = new FileWorker(textPanel);
         JToolBar menuPanel = createMenuPanel();
-        textPanel.createInput();
+        textPanel.getTextPanelModel().createInput();
         JMenuBar menuBar = createMenuBar();
         frame.setJMenuBar(menuBar);
 
@@ -71,6 +72,7 @@ public class MainWindow {
                         JOptionPane.YES_NO_OPTION);
                 if(answer==0)
                     fileWork.newFile();
+                updateWindow();
             }
         }));
         toolBar.add(makeButton(new JButton(), "save.png", new ActionListener() {
@@ -86,7 +88,7 @@ public class MainWindow {
         toolBar.add(makeButton(new JButton(), "B.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                textPanel.changeStyleOnBold();
+                textPanel.getTextPanelModel().changeStyleOnBold();
                 updateWindow();
 
             }
@@ -94,7 +96,7 @@ public class MainWindow {
         toolBar.add(makeButton(new JButton(), "I.png", new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                textPanel.changeStyleOnItalic();
+                textPanel.getTextPanelModel().changeStyleOnItalic();
                 updateWindow();
             }
         }));
@@ -108,7 +110,7 @@ public class MainWindow {
             public void actionPerformed(ActionEvent e) {
                 JComboBox cb = (JComboBox)e.getSource();
                 String fontType = (String) cb.getSelectedItem();
-                textPanel.changeTypeFont(fontType);
+                textPanel.getTextPanelModel().changeTypeFont(fontType);
 
                 updateWindow();
             }
@@ -121,7 +123,7 @@ public class MainWindow {
                 JComboBox cb = (JComboBox)e.getSource();
                 String change = (String) cb.getSelectedItem();
                 int size=Integer.parseInt(change);
-                textPanel.changeSizeFont(size);
+                textPanel.getTextPanelModel().changeSizeFont(size);
 
                 updateWindow();
             }
@@ -216,7 +218,7 @@ public class MainWindow {
         edit.add(copy);
         copy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.copy();
+                textPanel.getTextPanelModel().copy();
                 updateWindow();
 
             }
@@ -227,7 +229,7 @@ public class MainWindow {
         edit.add(paste);
         paste.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.paste();
+                textPanel.getTextPanelModel().paste();
                 updateWindow();
 
             }
@@ -238,7 +240,7 @@ public class MainWindow {
         edit.add(cut);
         cut.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.cut();
+                textPanel.getTextPanelModel().cut();
                 updateWindow();
 
             }
@@ -254,7 +256,7 @@ public class MainWindow {
         formatter.add(bold);
         bold.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeStyleOnBold();
+                textPanel.getTextPanelModel().changeStyleOnBold();
                 updateWindow();
             }
         });
@@ -264,7 +266,7 @@ public class MainWindow {
         formatter.add(italic);
         italic.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeStyleOnItalic();
+                textPanel.getTextPanelModel().changeStyleOnItalic();
                 updateWindow();
             }
         });
@@ -278,7 +280,7 @@ public class MainWindow {
         size.add(tenSize);
         tenSize.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeSizeFont(10);
+                textPanel.getTextPanelModel().changeSizeFont(10);
                 updateWindow();
             }
         });
@@ -288,7 +290,7 @@ public class MainWindow {
         size.add(fiftySize);
         fiftySize.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeSizeFont(50);
+                textPanel.getTextPanelModel().changeSizeFont(50);
                 updateWindow();
             }
         });
@@ -302,7 +304,7 @@ public class MainWindow {
         textFont.add(liberSerif);
         liberSerif.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeTypeFont("Liberation Serif");
+                textPanel.getTextPanelModel().changeTypeFont("Liberation Serif");
                 updateWindow();
             }
         });
@@ -312,7 +314,7 @@ public class MainWindow {
         textFont.add(monospaned);
         monospaned.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                textPanel.changeTypeFont("Monospaned");
+                textPanel.getTextPanelModel().changeTypeFont("Monospaned");
                 updateWindow();
             }
         });

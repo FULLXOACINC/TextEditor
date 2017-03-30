@@ -2,8 +2,8 @@ package Listeners;
 
 import TextObjects.Char;
 import TextObjects.Line;
-import Window.MainWindow;
-import Window.TextPanel;
+import Window.TextPanel.TextPanel;
+import Window.TextPanel.TextPanelModel;
 
 import javax.swing.*;
 import javax.xml.stream.XMLInputFactory;
@@ -19,18 +19,22 @@ import java.util.ArrayList;
  */
 public class FileWorker {
 
-    private TextPanel textPanel;
+    private TextPanelModel textPanelModel;
 
     public FileWorker(TextPanel textPanel){
-        this.textPanel = textPanel;
+        this.textPanelModel = textPanel.getTextPanelModel();
     }
+
+
 
     public void openFile(){
         JFileChooser fileChooser = new JFileChooser();
 
         if(fileChooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
             String filePath=fileChooser.getSelectedFile().getPath();
-            if (getExtension(fileChooser.getSelectedFile().getName()).equals("txt"))
+            boolean isTxt=getExtension(fileChooser.getSelectedFile().getName()).equals("txt");
+
+            if (isTxt)
               openTextFile(filePath);
             else
               openXMLFile(filePath);
@@ -49,7 +53,7 @@ public class FileWorker {
     private void openXMLFile(String fileName) {
         try {
             Line newLine = new Line();
-            textPanel.setLines(new ArrayList<Line>());
+            textPanelModel.setLines(new ArrayList<Line>());
             XMLStreamReader xmlReader = XMLInputFactory.newInstance()
                     .createXMLStreamReader(fileName, new FileInputStream(fileName));
             while (xmlReader.hasNext()) {
@@ -67,7 +71,7 @@ public class FileWorker {
                     }
                 } else if (xmlReader.isEndElement()) {
                     if (xmlReader.getLocalName().equals("Line")){
-                        textPanel.getLines().add(newLine);
+                        textPanelModel.getLines().add(newLine);
                     }
                 }
             }
@@ -81,14 +85,14 @@ public class FileWorker {
         try  {
             BufferedReader reader = new BufferedReader( new FileReader(fileName));
             String line;
-            textPanel.setLines(new ArrayList<Line>());
+            textPanelModel.setLines(new ArrayList<Line>());
             while( ( line = reader.readLine() ) != null ) {
                 Line newLine = new Line();
                 char [] newCharArray = line.toCharArray ();
                 for (char ch: newCharArray){
-                    newLine.add(ch,textPanel.getFont());
+                    newLine.add(ch,textPanelModel.getFont());
                 }
-                textPanel.getLines().add(newLine);
+                textPanelModel.getLines().add(newLine);
             }
 
         }
@@ -108,7 +112,7 @@ public class FileWorker {
                             (new FileWriter(fileChooser.getSelectedFile() + ".xml"));
                     xmlWriter.writeStartDocument("UTF-8", "1.0");
                     xmlWriter.writeStartElement("TextDoc");
-                for (Line line : textPanel.getLines()) {
+                for (Line line : textPanelModel.getLines()) {
                         xmlWriter.writeStartElement("Line");
                         for (Char ch : line.getChars()) {
                             xmlWriter.writeStartElement("Char");
@@ -132,7 +136,7 @@ public class FileWorker {
     }
 
     public void newFile() {
-        textPanel.deleteAllText();
+        textPanelModel.deleteAllText();
     }
 
 }

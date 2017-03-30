@@ -4,7 +4,8 @@ import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import Window.MainWindow;
-import Window.TextPanel;
+import Window.TextPanel.TextPanel;
+import Window.TextPanel.TextPanelModel;
 
 /**
  * Created by alex on 23.2.17.
@@ -13,15 +14,15 @@ public class TextMouseListener extends MouseInputAdapter {
 
     private Point click;
     private MainWindow mainWindow;
-    private TextPanel textPanel;
+    private TextPanelModel textPanelModel;
 
     public TextMouseListener(MainWindow mainWindow){
         this.mainWindow=mainWindow;
-        textPanel = mainWindow.getTextPanel();
+        this.textPanelModel = mainWindow.getTextPanel().getTextPanelModel();
     }
 
     public void mouseClicked(MouseEvent e) {
-        textPanel.click(e.getPoint());
+        textPanelModel.click(e.getPoint());
         mainWindow.updateWindow();
     }
 
@@ -30,12 +31,12 @@ public class TextMouseListener extends MouseInputAdapter {
     }
 
     public void mouseReleased(MouseEvent e){
-        textPanel.click(click, e.getPoint());
+        textPanelModel.click(click, e.getPoint());
         mainWindow.updateWindow();
     }
 
     public void mouseDragged(MouseEvent e) {
-        textPanel.click(click, e.getPoint());
+        textPanelModel.click(click, e.getPoint());
         mainWindow.updateWindow();
     }
 
